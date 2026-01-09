@@ -1,62 +1,21 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <!-- Character encoding MUST be first -->
     <meta charset="UTF-8" />
-
-    <!-- Viewport for responsive design -->
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
-    />
-
-    <!-- Document title with site name -->
-    <title>AI Task Manager - Intelligent Task Organization Made Simple</title>
-
-    <!-- Meta descriptions for SEO -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Task Manager - Intelligent Task Management Solution</title>
     <meta
       name="description"
-      content="Transform your task management with AI-powered organization. Add tasks naturally, let AI analyze and prioritize, then focus on what matters most."
+      content="Transform your workflow with AI-powered task management. Intelligent prioritization, automation, and insights for teams."
     />
-
-    <!-- Open Graph for social media -->
-    <meta
-      property="og:title"
-      content="AI Task Manager - Intelligent Task Organization"
-    />
-    <meta
-      property="og:description"
-      content="Transform your task management with AI-powered organization. Add tasks naturally, let AI analyze and prioritize, then focus on what matters most."
-    />
-    <meta property="og:type" content="website" />
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-
-    <!-- Preload critical resources -->
-    <link rel="preload" href="/src/styles/design-system.css" as="style" />
-    <link rel="preload" href="/src/styles/main.css" as="style" />
+    <link rel="stylesheet" href="/src/styles/main.css" />
   </head>
   <body>
-    <!-- Skip navigation for accessibility -->
-    <a href="#main" class="skip-link">Skip to main content</a>
-
-    <div id="app">
-      <!-- Header Component -->
-      <div id="header-root"></div>
-
-      <!-- Main content with landmark -->
-      <main id="main" role="main">
-        <!-- Hero Component -->
-        <div id="hero-root"></div>
-
-        <!-- Features Component -->
-        <div id="features-root"></div>
-
-        <!-- Workflow Component -->
-        <div id="workflow-root"></div>
-      </main>
-    </div>
+    <div id="header"></div>
+    <div id="hero"></div>
+    <div id="features"></div>
+    <div id="workflow"></div>
+    <div id="testimonials"></div>
 
     <script type="module" src="/src/main.js"></script>
   </body>
