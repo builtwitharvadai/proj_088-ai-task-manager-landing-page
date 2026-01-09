@@ -1,107 +1,75 @@
-/**
- * Main Application Entry Point
- * Initializes all components and manages application lifecycle
- */
-
 import './styles/main.css';
-import './styles/design-system.css';
-import './styles/layout.css';
-import './styles/typography.css';
-import './styles/components.css';
-import './styles/header.css';
-import './styles/hero.css';
-import './styles/features.css';
-import './styles/workflow.css';
-import './styles/testimonials.css';
-import './styles/pricing.css';
-
-import headerHtml from './components/header.html?raw';
-import heroHtml from './components/hero.html?raw';
-import featuresHtml from './components/features.html?raw';
-import workflowHtml from './components/workflow.html?raw';
-import testimonialsHtml from './components/testimonials.html?raw';
-import pricingHtml from './components/pricing.html?raw';
-
 import { initializeNavigation } from './js/navigation.js';
 import { initializeHero } from './js/hero.js';
 import { initializeFeatures } from './js/features.js';
 import { initializeWorkflow } from './js/workflow.js';
 import { initializeTestimonials } from './js/testimonials.js';
 import { initializePricing } from './js/pricing.js';
+import { initializePerformance } from './js/performance.js';
+import { initializeSEO } from './js/seo.js';
 
-/**
- * Injects HTML content into the application container
- */
-function injectComponents() {
-  const app = document.querySelector('#app');
-  if (!app) {
-    console.error('[Main] Application container #app not found');
-    return;
-  }
-
-  app.innerHTML = `
-    ${headerHtml}
-    <main>
-      ${heroHtml}
-      ${featuresHtml}
-      ${workflowHtml}
-      ${testimonialsHtml}
-      ${pricingHtml}
-    </main>
-  `;
-}
-
-/**
- * Initializes all interactive components
- * @returns {Function[]} Array of cleanup functions
- */
-function initializeComponents() {
-  const cleanupFunctions = [];
+// Load HTML components
+async function loadComponents() {
+  const components = [
+    { id: 'header', path: '/src/components/header.html' },
+    { id: 'hero', path: '/src/components/hero.html' },
+    { id: 'features', path: '/src/components/features.html' },
+    { id: 'workflow', path: '/src/components/workflow.html' },
+    { id: 'testimonials', path: '/src/components/testimonials.html' },
+    { id: 'pricing', path: '/src/components/pricing.html' },
+    { id: 'footer', path: '/src/components/footer.html' },
+  ];
 
   try {
-    cleanupFunctions.push(initializeNavigation());
-    cleanupFunctions.push(initializeHero());
-    cleanupFunctions.push(initializeFeatures());
-    cleanupFunctions.push(initializeWorkflow());
-    cleanupFunctions.push(initializeTestimonials());
-    cleanupFunctions.push(initializePricing());
-
-    console.log('[Main] All components initialized successfully');
+    await Promise.all(
+      components.map(async ({ id, path }) => {
+        const response = await fetch(path);
+        const html = await response.text();
+        const element = document.getElementById(id);
+        if (element) {
+          element.innerHTML = html;
+        }
+      })
+    );
   } catch (error) {
-    console.error('[Main] Component initialization failed:', error);
+    console.error('Error loading components:', error);
   }
-
-  return cleanupFunctions;
 }
 
-/**
- * Main application initialization
- */
-function initializeApp() {
-  injectComponents();
-  const cleanupFunctions = initializeComponents();
+// Initialize all modules
+async function initializeApp() {
+  try {
+    await loadComponents();
 
-  // Return cleanup function for hot module replacement
-  return () => {
-    cleanupFunctions.forEach((cleanup) => {
-      if (typeof cleanup === 'function') {
-        cleanup();
-      }
+    // Initialize performance optimizations
+    const performanceCleanup = initializePerformance();
+
+    // Initialize SEO enhancements
+    const seoCleanup = initializeSEO();
+
+    // Initialize component modules
+    initializeNavigation();
+    initializeHero();
+    initializeFeatures();
+    initializeWorkflow();
+    initializeTestimonials();
+    initializePricing();
+
+    console.log('Application initialized successfully');
+
+    // Cleanup on page unload
+    window.addEventListener('beforeunload', () => {
+      performanceCleanup();
+      seoCleanup();
     });
-  };
+  } catch (error) {
+    console.error('Error initializing application:', error);
+  }
 }
 
-// Initialize when DOM is ready
+// Start the application
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', initializeApp);
 } else {
   initializeApp();
-}
-
-// Hot Module Replacement support
-if (import.meta.hot) {
-  import.meta.hot.accept(() => {
-    console.log('[Main] Hot module replacement triggered');
-    initializeApp();
-  });
 }
