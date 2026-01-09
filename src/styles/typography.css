@@ -1,0 +1,603 @@
+/**
+ * Typography System - Google Fonts Integration and Text Styles
+ * Comprehensive typography scale with responsive font sizing and text utilities
+ * 
+ * @module typography
+ * @generated-from task-id:TASK-002
+ */
+
+/* ============================================================================
+   GOOGLE FONTS IMPORT - Inter Font Family
+   ============================================================================ */
+
+/* Import Inter font with optimized weights for web performance */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* ============================================================================
+   BASE TYPOGRAPHY SETTINGS
+   ============================================================================ */
+
+body {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-normal);
+  letter-spacing: var(--letter-spacing-normal);
+  color: var(--color-gray-900);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* ============================================================================
+   HEADING STYLES (H1-H6)
+   ============================================================================ */
+
+h1,
+.h1 {
+  font-size: var(--font-size-5xl);
+  font-weight: var(--font-weight-extrabold);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-tight);
+  color: var(--color-gray-900);
+  margin-block-start: 0;
+  margin-block-end: var(--space-6);
+}
+
+h2,
+.h2 {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-tight);
+  color: var(--color-gray-900);
+  margin-block-start: 0;
+  margin-block-end: var(--space-5);
+}
+
+h3,
+.h3 {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-snug);
+  letter-spacing: var(--letter-spacing-tight);
+  color: var(--color-gray-900);
+  margin-block-start: 0;
+  margin-block-end: var(--space-5);
+}
+
+h4,
+.h4 {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-snug);
+  letter-spacing: var(--letter-spacing-normal);
+  color: var(--color-gray-900);
+  margin-block-start: 0;
+  margin-block-end: var(--space-4);
+}
+
+h5,
+.h5 {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-snug);
+  letter-spacing: var(--letter-spacing-normal);
+  color: var(--color-gray-900);
+  margin-block-start: 0;
+  margin-block-end: var(--space-4);
+}
+
+h6,
+.h6 {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-normal);
+  letter-spacing: var(--letter-spacing-normal);
+  color: var(--color-gray-900);
+  margin-block-start: 0;
+  margin-block-end: var(--space-3);
+}
+
+/* ============================================================================
+   BODY TEXT STYLES
+   ============================================================================ */
+
+p,
+.text-body {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-relaxed);
+  letter-spacing: var(--letter-spacing-normal);
+  color: var(--color-gray-700);
+  margin-block-start: 0;
+  margin-block-end: var(--space-5);
+}
+
+.text-body-lg {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-relaxed);
+  letter-spacing: var(--letter-spacing-normal);
+  color: var(--color-gray-700);
+}
+
+.text-body-sm {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-normal);
+  letter-spacing: var(--letter-spacing-normal);
+  color: var(--color-gray-700);
+}
+
+/* ============================================================================
+   LEAD TEXT (Introductory Paragraphs)
+   ============================================================================ */
+
+.text-lead {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-relaxed);
+  letter-spacing: var(--letter-spacing-normal);
+  color: var(--color-gray-600);
+  margin-block-end: var(--space-6);
+}
+
+/* ============================================================================
+   CAPTION AND SMALL TEXT
+   ============================================================================ */
+
+.text-caption {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-normal);
+  letter-spacing: var(--letter-spacing-normal);
+  color: var(--color-gray-600);
+}
+
+.text-small {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-normal);
+  letter-spacing: var(--letter-spacing-normal);
+  color: var(--color-gray-600);
+}
+
+/* ============================================================================
+   FONT WEIGHT UTILITIES
+   ============================================================================ */
+
+.font-light {
+  font-weight: var(--font-weight-light);
+}
+
+.font-normal {
+  font-weight: var(--font-weight-normal);
+}
+
+.font-medium {
+  font-weight: var(--font-weight-medium);
+}
+
+.font-semibold {
+  font-weight: var(--font-weight-semibold);
+}
+
+.font-bold {
+  font-weight: var(--font-weight-bold);
+}
+
+.font-extrabold {
+  font-weight: var(--font-weight-extrabold);
+}
+
+/* ============================================================================
+   TEXT COLOR UTILITIES
+   ============================================================================ */
+
+.text-primary {
+  color: var(--color-primary-600);
+}
+
+.text-secondary {
+  color: var(--color-secondary-600);
+}
+
+.text-gray-900 {
+  color: var(--color-gray-900);
+}
+
+.text-gray-800 {
+  color: var(--color-gray-800);
+}
+
+.text-gray-700 {
+  color: var(--color-gray-700);
+}
+
+.text-gray-600 {
+  color: var(--color-gray-600);
+}
+
+.text-gray-500 {
+  color: var(--color-gray-500);
+}
+
+.text-gray-400 {
+  color: var(--color-gray-400);
+}
+
+.text-white {
+  color: var(--color-white);
+}
+
+.text-success {
+  color: var(--color-success);
+}
+
+.text-warning {
+  color: var(--color-warning);
+}
+
+.text-error {
+  color: var(--color-error);
+}
+
+.text-info {
+  color: var(--color-info);
+}
+
+/* ============================================================================
+   TEXT GRADIENT UTILITIES
+   ============================================================================ */
+
+.text-gradient-primary {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.text-gradient-vibrant {
+  background: var(--gradient-primary-vibrant);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* ============================================================================
+   TEXT ALIGNMENT UTILITIES
+   ============================================================================ */
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+/* ============================================================================
+   TEXT TRANSFORM UTILITIES
+   ============================================================================ */
+
+.text-uppercase {
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wider);
+}
+
+.text-lowercase {
+  text-transform: lowercase;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+.text-normal-case {
+  text-transform: none;
+}
+
+/* ============================================================================
+   TEXT DECORATION UTILITIES
+   ============================================================================ */
+
+.text-underline {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+.text-line-through {
+  text-decoration: line-through;
+}
+
+.text-no-underline {
+  text-decoration: none;
+}
+
+/* ============================================================================
+   LINE HEIGHT UTILITIES
+   ============================================================================ */
+
+.leading-tight {
+  line-height: var(--line-height-tight);
+}
+
+.leading-snug {
+  line-height: var(--line-height-snug);
+}
+
+.leading-normal {
+  line-height: var(--line-height-normal);
+}
+
+.leading-relaxed {
+  line-height: var(--line-height-relaxed);
+}
+
+.leading-loose {
+  line-height: var(--line-height-loose);
+}
+
+/* ============================================================================
+   LETTER SPACING UTILITIES
+   ============================================================================ */
+
+.tracking-tight {
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+.tracking-normal {
+  letter-spacing: var(--letter-spacing-normal);
+}
+
+.tracking-wide {
+  letter-spacing: var(--letter-spacing-wide);
+}
+
+.tracking-wider {
+  letter-spacing: var(--letter-spacing-wider);
+}
+
+.tracking-widest {
+  letter-spacing: var(--letter-spacing-widest);
+}
+
+/* ============================================================================
+   SPECIAL TEXT STYLES
+   ============================================================================ */
+
+.text-display {
+  font-size: var(--font-size-6xl);
+  font-weight: var(--font-weight-extrabold);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-tight);
+  color: var(--color-gray-900);
+}
+
+.text-hero {
+  font-size: var(--font-size-5xl);
+  font-weight: var(--font-weight-extrabold);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-tight);
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.text-subtitle {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-relaxed);
+  letter-spacing: var(--letter-spacing-normal);
+  color: var(--color-gray-600);
+}
+
+.text-overline {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-normal);
+  letter-spacing: var(--letter-spacing-widest);
+  text-transform: uppercase;
+  color: var(--color-primary-600);
+}
+
+.text-label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-normal);
+  letter-spacing: var(--letter-spacing-normal);
+  color: var(--color-gray-700);
+}
+
+/* ============================================================================
+   MONOSPACE TEXT
+   ============================================================================ */
+
+code,
+kbd,
+samp,
+pre,
+.text-mono {
+  font-family: var(--font-family-mono);
+  font-size: 0.9em;
+}
+
+code {
+  padding: 0.125rem 0.25rem;
+  background-color: var(--color-gray-100);
+  border-radius: var(--radius-sm);
+  color: var(--color-gray-800);
+}
+
+pre {
+  padding: var(--space-5);
+  background-color: var(--color-gray-900);
+  border-radius: var(--radius-md);
+  color: var(--color-gray-100);
+  overflow-x: auto;
+  line-height: var(--line-height-relaxed);
+}
+
+pre code {
+  padding: 0;
+  background-color: transparent;
+  color: inherit;
+}
+
+/* ============================================================================
+   RESPONSIVE TYPOGRAPHY ADJUSTMENTS
+   ============================================================================ */
+
+@media (width >= 640px) {
+  .text-display {
+    font-size: clamp(3.75rem, 3rem + 3.75vw, 5rem);
+  }
+
+  .text-hero {
+    font-size: clamp(3rem, 2.5rem + 2.5vw, 4rem);
+  }
+}
+
+@media (width >= 768px) {
+  h1,
+  .h1 {
+    margin-block-end: var(--space-8);
+  }
+
+  h2,
+  .h2 {
+    margin-block-end: var(--space-7);
+  }
+
+  .text-lead {
+    margin-block-end: var(--space-8);
+  }
+}
+
+@media (width >= 1024px) {
+  .text-display {
+    font-size: clamp(4.5rem, 3.5rem + 5vw, 6rem);
+  }
+}
+
+/* ============================================================================
+   DARK MODE SUPPORT
+   ============================================================================ */
+
+@media (prefers-color-scheme: dark) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .h1,
+  .h2,
+  .h3,
+  .h4,
+  .h5,
+  .h6 {
+    color: var(--color-gray-50);
+  }
+
+  p,
+  .text-body,
+  .text-body-lg,
+  .text-body-sm {
+    color: var(--color-gray-300);
+  }
+
+  .text-lead,
+  .text-subtitle {
+    color: var(--color-gray-400);
+  }
+
+  .text-caption,
+  .text-small {
+    color: var(--color-gray-400);
+  }
+
+  code {
+    background-color: var(--color-gray-800);
+    color: var(--color-gray-200);
+  }
+}
+
+/* ============================================================================
+   HIGH CONTRAST MODE SUPPORT
+   ============================================================================ */
+
+@media (prefers-contrast: high) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .h1,
+  .h2,
+  .h3,
+  .h4,
+  .h5,
+  .h6 {
+    color: var(--color-black);
+  }
+
+  p,
+  .text-body,
+  .text-body-lg,
+  .text-body-sm {
+    color: var(--color-gray-900);
+  }
+
+  .text-primary {
+    color: var(--color-primary-700);
+  }
+
+  .text-secondary {
+    color: var(--color-secondary-700);
+  }
+}
+
+/* ============================================================================
+   PRINT STYLES
+   ============================================================================ */
+
+@media print {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    page-break-after: avoid;
+    page-break-inside: avoid;
+  }
+
+  p {
+    orphans: 3;
+    widows: 3;
+  }
+
+  .text-gradient-primary,
+  .text-gradient-vibrant,
+  .text-hero {
+    -webkit-text-fill-color: currentColor;
+    color: var(--color-gray-900);
+    background: none;
+  }
+}
