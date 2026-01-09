@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>AI Task Manager - Navigation</title>
+</head>
+<body>
+  <!-- Skip navigation for accessibility -->
+  <a href="#main" class="skip-link">Skip to main content</a>
+  
+  <!-- Semantic header with sticky navigation -->
+  <header class="header sticky" role="banner">
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+      <div class="nav-container">
+        <!-- Logo placeholder -->
+        <div class="nav-logo" aria-label="AI Task Manager">
+          <a href="/" aria-label="AI Task Manager Home">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="40" height="40" rx="8" fill="currentColor" opacity="0.1"/>
+              <path d="M20 10L30 20L20 30L10 20L20 10Z" fill="currentColor"/>
+            </svg>
+            <span class="logo-text">AI Task Manager</span>
+          </a>
+        </div>
+
+        <!-- Desktop navigation menu -->
+        <ul class="nav-menu" role="list">
+          <li class="nav-item">
+            <a href="#features" class="nav-link" data-scroll-to="features">
+              Features
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#how-it-works" class="nav-link" data-scroll-to="how-it-works">
+              How It Works
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#testimonials" class="nav-link" data-scroll-to="testimonials">
+              Testimonials
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#pricing" class="nav-link" data-scroll-to="pricing">
+              Pricing
+            </a>
+          </li>
+        </ul>
+
+        <!-- Call-to-action button -->
+        <div class="nav-actions">
+          <a href="#get-started" class="btn btn-primary" data-scroll-to="get-started" role="button">
+            Get Started
+          </a>
+        </div>
+
+        <!-- Mobile hamburger menu button -->
+        <button 
+          class="nav-toggle" 
+          type="button"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <span class="hamburger" aria-hidden="true">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </span>
+        </button>
+      </div>
+
+      <!-- Mobile navigation menu -->
+      <div 
+        id="mobile-menu" 
+        class="mobile-menu" 
+        role="menu"
+        aria-hidden="true"
+      >
+        <ul class="mobile-menu-list" role="list">
+          <li class="mobile-menu-item" role="none">
+            <a href="#features" class="mobile-menu-link" data-scroll-to="features" role="menuitem">
+              Features
+            </a>
+          </li>
+          <li class="mobile-menu-item" role="none">
+            <a href="#how-it-works" class="mobile-menu-link" data-scroll-to="how-it-works" role="menuitem">
+              How It Works
+            </a>
+          </li>
+          <li class="mobile-menu-item" role="none">
+            <a href="#testimonials" class="mobile-menu-link" data-scroll-to="testimonials" role="menuitem">
+              Testimonials
+            </a>
+          </li>
+          <li class="mobile-menu-item" role="none">
+            <a href="#pricing" class="mobile-menu-link" data-scroll-to="pricing" role="menuitem">
+              Pricing
+            </a>
+          </li>
+          <li class="mobile-menu-item mobile-menu-cta" role="none">
+            <a href="#get-started" class="btn btn-primary btn-block" data-scroll-to="get-started" role="menuitem">
+              Get Started
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+</body>
+</html>
