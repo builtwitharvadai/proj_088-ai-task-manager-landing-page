@@ -2,21 +2,569 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AI Task Manager - Intelligent Task Management Solution</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>AI Task Manager - Intelligent Task Management Platform</title>
     <meta
       name="description"
-      content="Transform your workflow with AI-powered task management. Intelligent prioritization, automation, and insights for teams."
+      content="Transform your workflow with AI-powered task management. Automate task creation, prioritize intelligently, and boost team productivity."
     />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="AI Task Manager" />
+    <meta
+      property="og:description"
+      content="Transform your workflow with AI-powered task management"
+    />
+    <meta property="og:type" content="website" />
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/src/styles/design-system.css" />
+    <link rel="stylesheet" href="/src/styles/typography.css" />
+    <link rel="stylesheet" href="/src/styles/layout.css" />
+    <link rel="stylesheet" href="/src/styles/components.css" />
+    <link rel="stylesheet" href="/src/styles/header.css" />
+    <link rel="stylesheet" href="/src/styles/hero.css" />
+    <link rel="stylesheet" href="/src/styles/features.css" />
+    <link rel="stylesheet" href="/src/styles/workflow.css" />
+    <link rel="stylesheet" href="/src/styles/testimonials.css" />
     <link rel="stylesheet" href="/src/styles/main.css" />
   </head>
   <body>
-    <div id="header"></div>
-    <div id="hero"></div>
-    <div id="features"></div>
-    <div id="workflow"></div>
-    <div id="testimonials"></div>
+    <!-- Skip Navigation -->
+    <a href="#main" class="skip-link">Skip to main content</a>
 
+    <!-- Header -->
+    <div id="header-container"></div>
+
+    <!-- Main Content -->
+    <main id="main" role="main">
+      <!-- Hero Section -->
+      <div id="hero-container"></div>
+
+      <!-- Features Section -->
+      <div id="features-container"></div>
+
+      <!-- Workflow Section -->
+      <div id="workflow-container"></div>
+
+      <!-- Testimonials Section -->
+      <div id="testimonials-container"></div>
+
+      <!-- Pricing Section -->
+      <section class="pricing" id="pricing" aria-labelledby="pricing-title">
+        <div class="container">
+          <!-- Section Header -->
+          <header class="pricing__header">
+            <h2 id="pricing-title" class="pricing__title">Choose Your Plan</h2>
+            <p class="pricing__subtitle">
+              Select the perfect plan for your team's needs. All plans include
+              core features with flexible scaling options.
+            </p>
+          </header>
+
+          <!-- Pricing Cards Grid -->
+          <div class="pricing__grid" role="list">
+            <!-- Free Tier -->
+            <article
+              class="pricing__card"
+              role="listitem"
+              aria-labelledby="free-title"
+            >
+              <div class="pricing__card-header">
+                <h3 id="free-title" class="pricing__card-title">Free</h3>
+                <div class="pricing__price" aria-label="Price: Free">
+                  <span class="pricing__amount">$0</span>
+                  <span class="pricing__period">/month</span>
+                </div>
+                <p class="pricing__description">
+                  Perfect for individuals getting started with AI task
+                  management
+                </p>
+              </div>
+
+              <div class="pricing__card-body">
+                <ul
+                  class="pricing__features"
+                  role="list"
+                  aria-label="Free plan features"
+                >
+                  <li class="pricing__feature">
+                    <svg
+                      class="pricing__feature-icon"
+                      aria-hidden="true"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                    <span>Up to 10 tasks per month</span>
+                  </li>
+                  <li class="pricing__feature">
+                    <svg
+                      class="pricing__feature-icon"
+                      aria-hidden="true"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                    <span>Basic AI task generation</span>
+                  </li>
+                  <li class="pricing__feature">
+                    <svg
+                      class="pricing__feature-icon"
+                      aria-hidden="true"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                    <span>1 project workspace</span>
+                  </li>
+                  <li class="pricing__feature">
+                    <svg
+                      class="pricing__feature-icon"
+                      aria-hidden="true"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                    <span>Email support</span>
+                  </li>
+                  <li class="pricing__feature">
+                    <svg
+                      class="pricing__feature-icon"
+                      aria-hidden="true"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                    <span>Mobile app access</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="pricing__card-footer">
+                <a
+                  href="#signup"
+                  class="pricing__cta pricing__cta--secondary"
+                  role="button"
+                  aria-label="Get started with Free plan"
+                >
+                  Get Started
+                </a>
+              </div>
+            </article>
+
+            <!-- Pro Tier (Recommended) -->
+            <article
+              class="pricing__card pricing__card--recommended"
+              role="listitem"
+              aria-labelledby="pro-title"
+            >
+              <div class="pricing__badge" aria-label="Recommended plan">
+                <svg
+                  class="pricing__badge-icon"
+                  aria-hidden="true"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8 1l2.163 4.382 4.837.703-3.5 3.411.826 4.818L8 12.09l-4.326 2.224.826-4.818-3.5-3.411 4.837-.703L8 1z"
+                    fill="currentColor"
+                  />
+                </svg>
+                <span>Recommended</span>
+              </div>
+
+              <div class="pricing__card-header">
+                <h3 id="pro-title" class="pricing__card-title">Pro</h3>
+                <div
+                  class="pricing__price"
+                  aria-label="Price: 19 dollars per month"
+                >
+                  <span class="pricing__amount">$19</span>
+                  <span class="pricing__period">/month</span>
+                </div>
+                <p class="pricing__description">
+                  Ideal for small teams and growing businesses
+                </p>
+              </div>
+
+              <div class="pricing__card-body">
+                <ul
+                  class="pricing__features"
+                  role="list"
+                  aria-label="Pro plan features"
+                >
+                  <li class="pricing__feature">
+                    <svg
+                      class="pricing__feature-icon"
+                      aria-hidden="true"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                    <span>Unlimited tasks</span>
+                  </li>
+                  <li class="pricing__feature">
+                    <svg
+                      class="pricing__feature-icon"
+                      aria-hidden="true"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                    <span>Advanced AI task generation</span>
+                  </li>
+                  <li class="pricing__feature">
+                    <svg
+                      class="pricing__feature-icon"
+                      aria-hidden="true"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                    <span>Up to 10 project workspaces</span>
+                  </li>
+                  <li class="pricing__feature">
+                    <svg
+                      class="pricing__feature-icon"
+                      aria-hidden="true"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                    <span>Team collaboration tools</span>
+                  </li>
+                  <li class="pricing__feature">
+                    <svg
+                      class="pricing__feature-icon"
+                      aria-hidden="true"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                    <span>Priority email & chat support</span>
+                  </li>
+                  <li class="pricing__feature">
+                    <svg
+                      class="pricing__feature-icon"
+                      aria-hidden="true"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                    <span>Advanced analytics dashboard</span>
+                  </li>
+                  <li class="pricing__feature">
+                    <svg
+                      class="pricing__feature-icon"
+                      aria-hidden="true"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                    <span>API access</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="pricing__card-footer">
+                <a
+                  href="#signup"
+                  class="pricing__cta pricing__cta--primary"
+                  role="button"
+                  aria-label="Get started with Pro plan"
+                >
+                  Get Started
+                </a>
+              </div>
+            </article>
+
+            <!-- Enterprise Tier -->
+            <article
+              class="pricing__card"
+              role="listitem"
+              aria-labelledby="enterprise-title"
+            >
+              <div class="pricing__card-header">
+                <h3 id="enterprise-title" class="pricing__card-title">
+                  Enterprise
+                </h3>
+                <div
+                  class="pricing__price"
+                  aria-label="Price: 49 dollars per month"
+                >
+                  <span class="pricing__amount">$49</span>
+                  <span class="pricing__period">/month</span>
+                </div>
+                <p class="pricing__description">
+                  Complete solution for large organizations
+                </p>
+              </div>
+
+              <div class="pricing__card-body">
+                <ul
+                  class="pricing__features"
+                  role="list"
+                  aria-label="Enterprise plan features"
+                >
+                  <li class="pricing__feature">
+                    <svg
+                      class="pricing__feature-icon"
+                      aria-hidden="true"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                    <span>Everything in Pro</span>
+                  </li>
+                  <li class="pricing__feature">
+                    <svg
+                      class="pricing__feature-icon"
+                      aria-hidden="true"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                    <span>Unlimited project workspaces</span>
+                  </li>
+                  <li class="pricing__feature">
+                    <svg
+                      class="pricing__feature-icon"
+                      aria-hidden="true"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                    <span>Custom AI model training</span>
+                  </li>
+                  <li class="pricing__feature">
+                    <svg
+                      class="pricing__feature-icon"
+                      aria-hidden="true"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                    <span>Dedicated account manager</span>
+                  </li>
+                  <li class="pricing__feature">
+                    <svg
+                      class="pricing__feature-icon"
+                      aria-hidden="true"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                    <span>24/7 phone & email support</span>
+                  </li>
+                  <li class="pricing__feature">
+                    <svg
+                      class="pricing__feature-icon"
+                      aria-hidden="true"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                    <span>SSO & advanced security</span>
+                  </li>
+                  <li class="pricing__feature">
+                    <svg
+                      class="pricing__feature-icon"
+                      aria-hidden="true"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                    <span>Custom integrations</span>
+                  </li>
+                  <li class="pricing__feature">
+                    <svg
+                      class="pricing__feature-icon"
+                      aria-hidden="true"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                    <span>SLA guarantee</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="pricing__card-footer">
+                <a
+                  href="#contact"
+                  class="pricing__cta pricing__cta--secondary"
+                  role="button"
+                  aria-label="Contact sales for Enterprise plan"
+                >
+                  Contact Sales
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <!-- Additional Information -->
+          <footer class="pricing__footer">
+            <p class="pricing__note">
+              All plans include a 14-day free trial. No credit card required.
+              Cancel anytime.
+            </p>
+          </footer>
+        </div>
+      </section>
+    </main>
+
+    <!-- Scripts -->
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
