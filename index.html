@@ -1,40 +1,75 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>AI Task Manager - Transform Your Productivity</title>
-  <meta name="description" content="Transform your productivity with AI-powered task management. Intelligent automation that adapts to your unique work style.">
-  
-  <link rel="stylesheet" href="/src/styles/main.css">
-  <script type="module" src="/src/main.js" defer></script>
-</head>
-<body>
-  <a href="#main" class="skip-link">Skip to main content</a>
-  
-  <div id="header-container"></div>
-  
-  <main id="main" role="main">
-    <section class="hero" role="region" aria-labelledby="hero-heading">
-      <div class="hero-content">
-        <h1 id="hero-heading" class="hero-title">
-          Transform Your Productivity with AI-Powered Task Management
-        </h1>
-        
-        <p class="hero-description">
-          Harness the power of artificial intelligence to streamline your workflow, prioritize what matters most, and achieve more in less time. Experience intelligent task automation that adapts to your unique work style.
-        </p>
-        
-        <a 
-          href="#signup" 
-          class="hero-cta"
-          role="button"
-          aria-label="Start your free trial today"
-        >
-          Start Free Trial
-        </a>
-      </div>
-    </section>
-  </main>
-</body>
+  <head>
+    <!-- Character encoding MUST be first -->
+    <meta charset="UTF-8" />
+
+    <!-- Viewport for responsive design -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+
+    <!-- Document title with site name -->
+    <title>AI Task Manager - Intelligent Task Management Made Simple</title>
+
+    <!-- Meta descriptions for SEO -->
+    <meta
+      name="description"
+      content="Transform your productivity with AI-powered task management. Smart prioritization, intelligent reminders, and workflow automation."
+    />
+
+    <!-- Open Graph for social media -->
+    <meta
+      property="og:title"
+      content="AI Task Manager - Intelligent Task Management Made Simple"
+    />
+    <meta
+      property="og:description"
+      content="Transform your productivity with AI-powered task management. Smart prioritization, intelligent reminders, and workflow automation."
+    />
+    <meta property="og:type" content="website" />
+
+    <!-- FontAwesome CDN for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Preconnect to FontAwesome CDN for performance -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/src/styles/design-system.css" />
+    <link rel="stylesheet" href="/src/styles/typography.css" />
+    <link rel="stylesheet" href="/src/styles/layout.css" />
+    <link rel="stylesheet" href="/src/styles/header.css" />
+    <link rel="stylesheet" href="/src/styles/hero.css" />
+    <link rel="stylesheet" href="/src/styles/features.css" />
+    <link rel="stylesheet" href="/src/styles/components.css" />
+    <link rel="stylesheet" href="/src/styles/main.css" />
+  </head>
+  <body>
+    <!-- Skip navigation for accessibility -->
+    <a href="#main" class="skip-link">Skip to main content</a>
+
+    <!-- Header Component -->
+    <div id="header-container"></div>
+
+    <!-- Main content with landmark -->
+    <main id="main" role="main">
+      <!-- Hero Component -->
+      <div id="hero-container"></div>
+
+      <!-- Features Component -->
+      <div id="features-container"></div>
+    </main>
+
+    <!-- Scripts -->
+    <script type="module" src="/src/main.js"></script>
+  </body>
 </html>
