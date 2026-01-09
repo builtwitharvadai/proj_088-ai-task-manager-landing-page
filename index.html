@@ -1,24 +1,166 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+    <!-- Character encoding MUST be first -->
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AI Task Manager - Intelligent Task Management Platform</title>
+
+    <!-- Viewport for responsive design -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+
+    <!-- Document title with site name -->
+    <title>AI Task Manager - Intelligent Task Management for Modern Teams</title>
+
+    <!-- Meta descriptions for SEO -->
     <meta
       name="description"
-      content="Streamline your workflow with AI-powered task management. Boost productivity and achieve more with intelligent automation."
+      content="Transform your workflow with AI-powered task management. Automate prioritization, get intelligent insights, and boost team productivity with our cutting-edge task management platform."
     />
-    <link rel="stylesheet" href="/src/styles/main.css" />
+    <meta
+      name="keywords"
+      content="AI task manager, task management, productivity, workflow automation, team collaboration, intelligent task prioritization, deadline prediction, project management, AI-powered productivity"
+    />
+    <meta name="author" content="AI Task Manager Team" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Canonical URL to prevent duplicate content -->
+    <link rel="canonical" href="https://aitaskmanager.com/" />
+
+    <!-- Open Graph for social media -->
+    <meta
+      property="og:title"
+      content="AI Task Manager - Intelligent Task Management for Modern Teams"
+    />
+    <meta
+      property="og:description"
+      content="Transform your workflow with AI-powered task management. Automate prioritization, get intelligent insights, and boost team productivity with our cutting-edge task management platform."
+    />
+    <meta
+      property="og:image"
+      content="https://aitaskmanager.com/images/og-image.jpg"
+    />
+    <meta property="og:url" content="https://aitaskmanager.com/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="AI Task Manager" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="AI Task Manager Platform Screenshot" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@aitaskmanager" />
+    <meta name="twitter:creator" content="@aitaskmanager" />
+    <meta
+      name="twitter:title"
+      content="AI Task Manager - Intelligent Task Management for Modern Teams"
+    />
+    <meta
+      name="twitter:description"
+      content="Transform your workflow with AI-powered task management. Automate prioritization, get intelligent insights, and boost team productivity with our cutting-edge task management platform."
+    />
+    <meta
+      name="twitter:image"
+      content="https://aitaskmanager.com/images/og-image.jpg"
+    />
+
+    <!-- JSON-LD Structured Data - Organization -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "AI Task Manager",
+        "url": "https://aitaskmanager.com",
+        "logo": "https://aitaskmanager.com/images/logo.png",
+        "description": "Transform your workflow with AI-powered task management. Automate prioritization, get intelligent insights, and boost team productivity with our cutting-edge task management platform.",
+        "sameAs": [
+          "https://twitter.com/aitaskmanager",
+          "https://linkedin.com/company/aitaskmanager",
+          "https://github.com/aitaskmanager"
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "Customer Service",
+          "email": "support@aitaskmanager.com",
+          "availableLanguage": ["English"]
+        }
+      }
+    </script>
+
+    <!-- JSON-LD Structured Data - Software Application -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "AI Task Manager",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "description": "Free tier available with premium plans"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.8",
+          "ratingCount": "1250",
+          "bestRating": "5",
+          "worstRating": "1"
+        },
+        "description": "Transform your workflow with AI-powered task management. Automate prioritization, get intelligent insights, and boost team productivity with our cutting-edge task management platform.",
+        "screenshot": "https://aitaskmanager.com/images/app-screenshot.jpg",
+        "featureList": [
+          "AI-powered task prioritization",
+          "Intelligent deadline prediction",
+          "Automated workflow optimization",
+          "Real-time collaboration",
+          "Advanced analytics and insights"
+        ]
+      }
+    </script>
+
+    <!-- JSON-LD Structured Data - Website -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "AI Task Manager",
+        "url": "https://aitaskmanager.com",
+        "description": "Transform your workflow with AI-powered task management. Automate prioritization, get intelligent insights, and boost team productivity with our cutting-edge task management platform.",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://aitaskmanager.com/search?q={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        }
+      }
+    </script>
+
+    <!-- JSON-LD Structured Data - Breadcrumb -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://aitaskmanager.com"
+          }
+        ]
+      }
+    </script>
+
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   </head>
   <body>
-    <div id="header"></div>
-    <div id="hero"></div>
-    <div id="features"></div>
-    <div id="workflow"></div>
-    <div id="testimonials"></div>
-    <div id="pricing"></div>
-    <div id="footer"></div>
-
+    <div id="app"></div>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
