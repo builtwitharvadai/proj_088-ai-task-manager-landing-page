@@ -1,0 +1,364 @@
+/**
+ * Footer Styles - AI Task Manager Landing Page
+ * Comprehensive footer styling with responsive grid layout, social media icons,
+ * and organized link sections following design system principles
+ * 
+ * @module footer
+ * @generated-from task-id:TASK-009
+ */
+
+/* ============================================================================
+   FOOTER CONTAINER AND LAYOUT
+   ============================================================================ */
+
+.footer {
+  background: var(--color-gray-900);
+  color: var(--color-gray-100);
+  padding-block-start: var(--space-16);
+  padding-block-end: var(--space-8);
+  margin-block-start: var(--space-20);
+  border-block-start: 1px solid var(--color-gray-800);
+}
+
+.footer-container {
+  max-width: var(--container-max-width, 1280px);
+  margin-inline: auto;
+  padding-inline: var(--space-5);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+  gap: var(--space-12);
+  margin-block-end: var(--space-12);
+}
+
+/* ============================================================================
+   FOOTER SECTIONS
+   ============================================================================ */
+
+.footer-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.footer-company {
+  grid-column: 1 / -1;
+}
+
+/* ============================================================================
+   FOOTER HEADINGS
+   ============================================================================ */
+
+.footer-heading {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-white);
+  margin-block-end: var(--space-2);
+  line-height: var(--line-height-tight);
+}
+
+.footer-company .footer-heading {
+  font-size: var(--font-size-2xl);
+  margin-block-end: var(--space-3);
+}
+
+/* ============================================================================
+   FOOTER DESCRIPTION
+   ============================================================================ */
+
+.footer-description {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-gray-300);
+  max-width: 45ch;
+  margin-block-end: var(--space-5);
+}
+
+/* ============================================================================
+   SOCIAL MEDIA SECTION
+   ============================================================================ */
+
+.footer-social {
+  display: flex;
+  gap: var(--space-4);
+  align-items: center;
+}
+
+.footer-social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background: var(--color-gray-800);
+  color: var(--color-gray-300);
+  transition: all var(--duration-normal) var(--ease-out);
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-social-link::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--color-primary-600), var(--color-primary-500));
+  opacity: 0;
+  transition: opacity var(--duration-normal) var(--ease-out);
+  z-index: -1;
+}
+
+.footer-social-link:hover {
+  color: var(--color-white);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.footer-social-link:hover::before {
+  opacity: 1;
+}
+
+.footer-social-link:focus-visible {
+  outline: 2px solid var(--color-primary-500);
+  outline-offset: 2px;
+}
+
+.footer-social-link:active {
+  transform: translateY(0);
+}
+
+.footer-social-icon {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ============================================================================
+   FOOTER LINKS
+   ============================================================================ */
+
+.footer-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.footer-list-item {
+  line-height: 1;
+}
+
+.footer-link {
+  display: inline-block;
+  font-size: var(--font-size-base);
+  color: var(--color-gray-300);
+  text-decoration: none;
+  transition: color var(--duration-fast) var(--ease-out);
+  position: relative;
+  padding-block: var(--space-1);
+}
+
+.footer-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--color-primary-500);
+  transition: width var(--duration-normal) var(--ease-out);
+}
+
+.footer-link:hover {
+  color: var(--color-white);
+}
+
+.footer-link:hover::after {
+  width: 100%;
+}
+
+.footer-link:focus-visible {
+  outline: 2px solid var(--color-primary-500);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+  color: var(--color-white);
+}
+
+/* ============================================================================
+   FOOTER BOTTOM SECTION
+   ============================================================================ */
+
+.footer-bottom {
+  border-block-start: 1px solid var(--color-gray-800);
+  padding-block-start: var(--space-8);
+  margin-block-start: var(--space-8);
+}
+
+.footer-bottom-container {
+  max-width: var(--container-max-width, 1280px);
+  margin-inline: auto;
+  padding-inline: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-copyright {
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-400);
+  text-align: center;
+}
+
+.footer-bottom-links {
+  display: flex;
+  gap: var(--space-4);
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer-bottom-link {
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-400);
+  text-decoration: none;
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.footer-bottom-link:hover {
+  color: var(--color-white);
+}
+
+.footer-bottom-link:focus-visible {
+  outline: 2px solid var(--color-primary-500);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+  color: var(--color-white);
+}
+
+.footer-divider {
+  color: var(--color-gray-700);
+  user-select: none;
+}
+
+/* ============================================================================
+   RESPONSIVE BREAKPOINTS
+   ============================================================================ */
+
+/* Tablet and above */
+@media (width >= 768px) {
+  .footer-container {
+    grid-template-columns: 2fr repeat(4, 1fr);
+    gap: var(--space-8);
+  }
+
+  .footer-company {
+    grid-column: 1 / 2;
+  }
+
+  .footer-bottom-container {
+    flex-direction: row;
+  }
+
+  .footer-copyright {
+    text-align: left;
+  }
+
+  .footer-bottom-links {
+    justify-content: flex-end;
+  }
+}
+
+/* Desktop and above */
+@media (width >= 1024px) {
+  .footer {
+    padding-block-start: var(--space-20);
+  }
+
+  .footer-container {
+    gap: var(--space-12);
+  }
+
+  .footer-description {
+    max-width: 50ch;
+  }
+}
+
+/* ============================================================================
+   PRINT STYLES
+   ============================================================================ */
+
+@media print {
+  .footer {
+    background: transparent;
+    color: black;
+    border-block-start: 1px solid black;
+    page-break-inside: avoid;
+  }
+
+  .footer-social,
+  .footer-bottom-links {
+    display: none;
+  }
+
+  .footer-link,
+  .footer-description,
+  .footer-copyright {
+    color: black;
+  }
+
+  .footer-link::after {
+    display: none;
+  }
+}
+
+/* ============================================================================
+   REDUCED MOTION SUPPORT
+   ============================================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .footer-social-link,
+  .footer-link,
+  .footer-bottom-link,
+  .footer-social-link::before,
+  .footer-link::after {
+    transition-duration: 0.01ms;
+  }
+
+  .footer-social-link:hover {
+    transform: none;
+  }
+}
+
+/* ============================================================================
+   HIGH CONTRAST MODE SUPPORT
+   ============================================================================ */
+
+@media (prefers-contrast: high) {
+  .footer {
+    border-block-start-width: 2px;
+  }
+
+  .footer-link,
+  .footer-bottom-link {
+    text-decoration: underline;
+  }
+
+  .footer-social-link {
+    border: 2px solid currentColor;
+  }
+}
+
+/* ============================================================================
+   DARK MODE ADJUSTMENTS
+   ============================================================================ */
+
+@media (prefers-color-scheme: dark) {
+  .footer {
+    background: var(--color-gray-950, #030712);
+  }
+
+  .footer-social-link {
+    background: var(--color-gray-900, #111827);
+  }
+}
