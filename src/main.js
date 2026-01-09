@@ -1,75 +1,43 @@
 /**
- * Main Entry Point - AI Task Manager Landing Page
- * Initializes all components and manages application lifecycle
+ * Main Application Entry Point
  * 
- * @module main
+ * Initializes and coordinates all application modules including navigation,
+ * hero section, features section, and workflow animations.
  */
 
 import './styles/main.css';
-import { initializeNavigation } from './js/navigation.js';
-import { initializeHero } from './js/hero.js';
-import { initializeFeatures } from './js/features.js';
+import { initNavigation } from './js/navigation.js';
+import { initHero } from './js/hero.js';
+import { initFeatures } from './js/features.js';
+import { initWorkflowAnimations } from './js/workflow.js';
 
 /**
- * Application configuration
+ * Initialize all application modules
+ * @private
  */
-const APP_CONFIG = Object.freeze({
-  INIT_TIMEOUT: 10000,
-  SELECTORS: {
-    APP_ROOT: '#app',
-  },
-});
-
-/**
- * Logger utility for structured logging
- */
-const logger = {
-  info(message, context = {}) {
-    console.log('[Main]', message, context);
-  },
-  warn(message, context = {}) {
-    console.warn('[Main]', message, context);
-  },
-  error(message, error, context = {}) {
-    console.error('[Main]', message, {
-      error: error.message,
-      stack: error.stack,
-      ...context,
-    });
-  },
-};
-
-/**
- * Initialize all application components
- */
-async function initializeApp() {
+function initApp() {
   try {
-    logger.info('Initializing application');
-
-    // Check if app root exists
-    const appRoot = document.querySelector(APP_CONFIG.SELECTORS.APP_ROOT);
-    if (!appRoot) {
-      logger.warn('App root element not found');
-    }
-
-    // Initialize components in parallel
-    await Promise.allSettled([
-      initializeNavigation(),
-      initializeHero(),
-      initializeFeatures(),
-    ]);
-
-    logger.info('Application initialized successfully');
+    // Initialize navigation
+    initNavigation();
+    
+    // Initialize hero section
+    initHero();
+    
+    // Initialize features section
+    initFeatures();
+    
+    // Initialize workflow animations
+    initWorkflowAnimations();
+    
+    console.log('Application initialized successfully');
   } catch (error) {
-    logger.error('Failed to initialize application', error);
+    console.error('Failed to initialize application:', error);
   }
 }
 
-/**
- * Initialize on DOM ready
- */
+// Initialize when DOM is ready
 if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initializeApp);
+  document.addEventListener('DOMContentLoaded', initApp);
 } else {
-  initializeApp();
+  initApp();
 }
