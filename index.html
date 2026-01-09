@@ -1,369 +1,174 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-<head>
-  <!-- Character encoding MUST be first -->
-  <meta charset="UTF-8">
-  
-  <!-- Viewport for responsive design -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  
-  <!-- Document title with site name -->
-  <title>AI Task Manager - Intelligent Task Management for Modern Teams</title>
-  
-  <!-- Meta descriptions for SEO -->
-  <meta name="description" content="Transform your workflow with AI-powered task management. Automate prioritization, get intelligent insights, and boost team productivity with our modern SaaS solution.">
-  
-  <!-- Open Graph for social media -->
-  <meta property="og:title" content="AI Task Manager - Intelligent Task Management">
-  <meta property="og:description" content="Transform your workflow with AI-powered task management. Automate prioritization and boost team productivity.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://aitaskmanager.example.com">
-  
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="AI Task Manager - Intelligent Task Management">
-  <meta name="twitter:description" content="Transform your workflow with AI-powered task management.">
-  
-  <!-- Theme color -->
-  <meta name="theme-color" content="#6366f1" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#4f46e5" media="(prefers-color-scheme: dark)">
-  
-  <!-- Preconnect to Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  
-  <!-- Module scripts -->
-  <script type="module" src="/src/main.js"></script>
-</head>
-<body>
-  <!-- Skip navigation for accessibility -->
-  <a href="#main" class="skip-link">Skip to main content</a>
-  
-  <!-- Header -->
-  <header class="header" role="banner">
-    <div class="container">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Task Manager - Intelligent Task Management</title>
+    <meta
+      name="description"
+      content="Transform your workflow with AI-powered task management. Automate prioritization, get intelligent insights, and boost productivity."
+    />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  </head>
+  <body>
+    <!-- Skip navigation for accessibility -->
+    <a href="#main" class="skip-link">Skip to main content</a>
+
+    <!-- Semantic header with sticky navigation -->
+    <header class="header sticky" role="banner">
       <nav class="nav" role="navigation" aria-label="Main navigation">
-        <div class="nav-brand">
-          <a href="/" aria-label="AI Task Manager Home">
-            <span class="brand-text">AI Task Manager</span>
-          </a>
+        <div class="nav-container">
+          <!-- Logo placeholder -->
+          <div class="nav-logo" aria-label="AI Task Manager">
+            <a href="/" aria-label="AI Task Manager Home">
+              <svg
+                width="40"
+                height="40"
+                viewBox="0 0 40 40"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <rect
+                  width="40"
+                  height="40"
+                  rx="8"
+                  fill="currentColor"
+                  opacity="0.1"
+                />
+                <path
+                  d="M20 10L30 20L20 30L10 20L20 10Z"
+                  fill="currentColor"
+                />
+              </svg>
+              <span class="logo-text">AI Task Manager</span>
+            </a>
+          </div>
+
+          <!-- Desktop navigation menu -->
+          <ul class="nav-menu" role="list">
+            <li class="nav-item">
+              <a href="#features" class="nav-link" data-scroll-to="features">
+                Features
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                href="#how-it-works"
+                class="nav-link"
+                data-scroll-to="how-it-works"
+              >
+                How It Works
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                href="#testimonials"
+                class="nav-link"
+                data-scroll-to="testimonials"
+              >
+                Testimonials
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#pricing" class="nav-link" data-scroll-to="pricing">
+                Pricing
+              </a>
+            </li>
+          </ul>
+
+          <!-- Call-to-action button -->
+          <div class="nav-actions">
+            <a
+              href="#get-started"
+              class="btn btn-primary"
+              data-scroll-to="get-started"
+              role="button"
+            >
+              Get Started
+            </a>
+          </div>
+
+          <!-- Mobile hamburger menu button -->
+          <button
+            class="nav-toggle"
+            type="button"
+            aria-label="Toggle navigation menu"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+          >
+            <span class="hamburger" aria-hidden="true">
+              <span class="hamburger-line"></span>
+              <span class="hamburger-line"></span>
+              <span class="hamburger-line"></span>
+            </span>
+          </button>
         </div>
-        <ul class="nav-menu" role="list">
-          <li><a href="#features" class="nav-link">Features</a></li>
-          <li><a href="#workflow" class="nav-link">How It Works</a></li>
-          <li><a href="#pricing" class="nav-link">Pricing</a></li>
-          <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
-        </ul>
-        <div class="nav-actions">
-          <a href="#" class="btn btn-secondary">Sign In</a>
-          <a href="#" class="btn btn-primary">Get Started</a>
+
+        <!-- Mobile navigation menu -->
+        <div
+          id="mobile-menu"
+          class="mobile-menu"
+          role="menu"
+          aria-hidden="true"
+        >
+          <ul class="mobile-menu-list" role="list">
+            <li class="mobile-menu-item" role="none">
+              <a
+                href="#features"
+                class="mobile-menu-link"
+                data-scroll-to="features"
+                role="menuitem"
+              >
+                Features
+              </a>
+            </li>
+            <li class="mobile-menu-item" role="none">
+              <a
+                href="#how-it-works"
+                class="mobile-menu-link"
+                data-scroll-to="how-it-works"
+                role="menuitem"
+              >
+                How It Works
+              </a>
+            </li>
+            <li class="mobile-menu-item" role="none">
+              <a
+                href="#testimonials"
+                class="mobile-menu-link"
+                data-scroll-to="testimonials"
+                role="menuitem"
+              >
+                Testimonials
+              </a>
+            </li>
+            <li class="mobile-menu-item" role="none">
+              <a
+                href="#pricing"
+                class="mobile-menu-link"
+                data-scroll-to="pricing"
+                role="menuitem"
+              >
+                Pricing
+              </a>
+            </li>
+            <li class="mobile-menu-item mobile-menu-cta" role="none">
+              <a
+                href="#get-started"
+                class="btn btn-primary btn-block"
+                data-scroll-to="get-started"
+                role="menuitem"
+              >
+                Get Started
+              </a>
+            </li>
+          </ul>
         </div>
       </nav>
-    </div>
-  </header>
-  
-  <!-- Main content -->
-  <main id="main" role="main">
-    <!-- Hero Section -->
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="container">
-        <div class="hero-content">
-          <h1 id="hero-title" class="hero-title">
-            Intelligent Task Management Powered by AI
-          </h1>
-          <p class="hero-description">
-            Transform your workflow with AI-powered task prioritization, automated insights, and intelligent collaboration tools designed for modern teams.
-          </p>
-          <div class="hero-actions">
-            <a href="#" class="btn btn-primary btn-lg">Start Free Trial</a>
-            <a href="#" class="btn btn-secondary btn-lg">Watch Demo</a>
-          </div>
-          <p class="hero-note">No credit card required • 14-day free trial</p>
-        </div>
-      </div>
-    </section>
-    
-    <!-- Features Section -->
-    <section class="section" id="features" aria-labelledby="features-title">
-      <div class="container">
-        <header class="section-header">
-          <h2 id="features-title" class="section-title">Powerful Features for Modern Teams</h2>
-          <p class="section-description">
-            Everything you need to manage tasks efficiently with the power of artificial intelligence
-          </p>
-        </header>
-        
-        <div class="features-grid">
-          <article class="feature-card">
-            <div class="feature-icon" aria-hidden="true">🤖</div>
-            <h3 class="feature-title">AI-Powered Prioritization</h3>
-            <p class="feature-description">
-              Let AI automatically prioritize your tasks based on deadlines, dependencies, and team capacity.
-            </p>
-          </article>
-          
-          <article class="feature-card">
-            <div class="feature-icon" aria-hidden="true">📊</div>
-            <h3 class="feature-title">Intelligent Insights</h3>
-            <p class="feature-description">
-              Get actionable insights and recommendations to optimize your team's productivity and workflow.
-            </p>
-          </article>
-          
-          <article class="feature-card">
-            <div class="feature-icon" aria-hidden="true">🔄</div>
-            <h3 class="feature-title">Smart Automation</h3>
-            <p class="feature-description">
-              Automate repetitive tasks and workflows with intelligent rules and triggers.
-            </p>
-          </article>
-          
-          <article class="feature-card">
-            <div class="feature-icon" aria-hidden="true">👥</div>
-            <h3 class="feature-title">Team Collaboration</h3>
-            <p class="feature-description">
-              Collaborate seamlessly with real-time updates, comments, and intelligent notifications.
-            </p>
-          </article>
-          
-          <article class="feature-card">
-            <div class="feature-icon" aria-hidden="true">📈</div>
-            <h3 class="feature-title">Advanced Analytics</h3>
-            <p class="feature-description">
-              Track progress with detailed analytics and customizable reports powered by AI.
-            </p>
-          </article>
-          
-          <article class="feature-card">
-            <div class="feature-icon" aria-hidden="true">🔒</div>
-            <h3 class="feature-title">Enterprise Security</h3>
-            <p class="feature-description">
-              Bank-level security with end-to-end encryption and compliance certifications.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-    
-    <!-- Workflow Section -->
-    <section class="section section-alt" id="workflow" aria-labelledby="workflow-title">
-      <div class="container">
-        <header class="section-header">
-          <h2 id="workflow-title" class="section-title">How It Works</h2>
-          <p class="section-description">
-            Get started in minutes with our intuitive AI-powered workflow
-          </p>
-        </header>
-        
-        <div class="workflow-steps">
-          <article class="workflow-step">
-            <div class="step-number" aria-hidden="true">1</div>
-            <h3 class="step-title">Create Your Tasks</h3>
-            <p class="step-description">
-              Add tasks manually or import from your existing tools. Our AI understands context automatically.
-            </p>
-          </article>
-          
-          <article class="workflow-step">
-            <div class="step-number" aria-hidden="true">2</div>
-            <h3 class="step-title">AI Analyzes & Prioritizes</h3>
-            <p class="step-description">
-              Our AI engine analyzes your tasks, identifies dependencies, and suggests optimal priorities.
-            </p>
-          </article>
-          
-          <article class="workflow-step">
-            <div class="step-number" aria-hidden="true">3</div>
-            <h3 class="step-title">Execute & Collaborate</h3>
-            <p class="step-description">
-              Work on tasks with your team, get intelligent reminders, and track progress in real-time.
-            </p>
-          </article>
-          
-          <article class="workflow-step">
-            <div class="step-number" aria-hidden="true">4</div>
-            <h3 class="step-title">Optimize & Improve</h3>
-            <p class="step-description">
-              Review AI-generated insights and continuously improve your team's productivity.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-    
-    <!-- Pricing Section -->
-    <section class="section" id="pricing" aria-labelledby="pricing-title">
-      <div class="container">
-        <header class="section-header">
-          <h2 id="pricing-title" class="section-title">Simple, Transparent Pricing</h2>
-          <p class="section-description">
-            Choose the plan that fits your team's needs
-          </p>
-        </header>
-        
-        <div class="pricing-grid">
-          <article class="pricing-card">
-            <h3 class="pricing-tier">Starter</h3>
-            <div class="pricing-price">
-              <span class="price-amount">$9</span>
-              <span class="price-period">/user/month</span>
-            </div>
-            <ul class="pricing-features" role="list">
-              <li>Up to 10 team members</li>
-              <li>AI task prioritization</li>
-              <li>Basic analytics</li>
-              <li>Email support</li>
-            </ul>
-            <a href="#" class="btn btn-secondary btn-block">Start Free Trial</a>
-          </article>
-          
-          <article class="pricing-card pricing-card-featured">
-            <div class="pricing-badge">Most Popular</div>
-            <h3 class="pricing-tier">Professional</h3>
-            <div class="pricing-price">
-              <span class="price-amount">$19</span>
-              <span class="price-period">/user/month</span>
-            </div>
-            <ul class="pricing-features" role="list">
-              <li>Unlimited team members</li>
-              <li>Advanced AI features</li>
-              <li>Custom workflows</li>
-              <li>Priority support</li>
-              <li>Advanced analytics</li>
-            </ul>
-            <a href="#" class="btn btn-primary btn-block">Start Free Trial</a>
-          </article>
-          
-          <article class="pricing-card">
-            <h3 class="pricing-tier">Enterprise</h3>
-            <div class="pricing-price">
-              <span class="price-amount">Custom</span>
-            </div>
-            <ul class="pricing-features" role="list">
-              <li>Everything in Professional</li>
-              <li>Dedicated account manager</li>
-              <li>Custom integrations</li>
-              <li>SLA guarantee</li>
-              <li>Advanced security</li>
-            </ul>
-            <a href="#" class="btn btn-secondary btn-block">Contact Sales</a>
-          </article>
-        </div>
-      </div>
-    </section>
-    
-    <!-- Testimonials Section -->
-    <section class="section section-alt" id="testimonials" aria-labelledby="testimonials-title">
-      <div class="container">
-        <header class="section-header">
-          <h2 id="testimonials-title" class="section-title">Loved by Teams Worldwide</h2>
-          <p class="section-description">
-            See what our customers have to say about AI Task Manager
-          </p>
-        </header>
-        
-        <div class="testimonials-grid">
-          <article class="testimonial-card">
-            <blockquote class="testimonial-quote">
-              "AI Task Manager transformed how our team works. The AI prioritization alone saved us 10 hours per week."
-            </blockquote>
-            <footer class="testimonial-author">
-              <cite>
-                <strong>Sarah Johnson</strong>
-                <span>Product Manager, TechCorp</span>
-              </cite>
-            </footer>
-          </article>
-          
-          <article class="testimonial-card">
-            <blockquote class="testimonial-quote">
-              "The intelligent insights helped us identify bottlenecks we didn't even know existed. Game changer!"
-            </blockquote>
-            <footer class="testimonial-author">
-              <cite>
-                <strong>Michael Chen</strong>
-                <span>Engineering Lead, StartupXYZ</span>
-              </cite>
-            </footer>
-          </article>
-          
-          <article class="testimonial-card">
-            <blockquote class="testimonial-quote">
-              "Best task management tool we've used. The AI features are incredibly accurate and helpful."
-            </blockquote>
-            <footer class="testimonial-author">
-              <cite>
-                <strong>Emily Rodriguez</strong>
-                <span>CEO, DesignStudio</span>
-              </cite>
-            </footer>
-          </article>
-        </div>
-      </div>
-    </section>
-    
-    <!-- CTA Section -->
-    <section class="section cta-section" aria-labelledby="cta-title">
-      <div class="container">
-        <div class="cta-content">
-          <h2 id="cta-title" class="cta-title">Ready to Transform Your Workflow?</h2>
-          <p class="cta-description">
-            Join thousands of teams already using AI Task Manager to boost productivity
-          </p>
-          <div class="cta-actions">
-            <a href="#" class="btn btn-primary btn-lg">Start Free Trial</a>
-            <a href="#" class="btn btn-secondary btn-lg">Schedule Demo</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-  
-  <!-- Footer -->
-  <footer class="footer" role="contentinfo">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-section">
-          <h3 class="footer-title">AI Task Manager</h3>
-          <p class="footer-description">
-            Intelligent task management powered by AI for modern teams.
-          </p>
-        </div>
-        
-        <div class="footer-section">
-          <h4 class="footer-heading">Product</h4>
-          <ul class="footer-links" role="list">
-            <li><a href="#features">Features</a></li>
-            <li><a href="#pricing">Pricing</a></li>
-            <li><a href="#">Integrations</a></li>
-            <li><a href="#">API</a></li>
-          </ul>
-        </div>
-        
-        <div class="footer-section">
-          <h4 class="footer-heading">Company</h4>
-          <ul class="footer-links" role="list">
-            <li><a href="#">About</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Careers</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-        </div>
-        
-        <div class="footer-section">
-          <h4 class="footer-heading">Legal</h4>
-          <ul class="footer-links" role="list">
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms of Service</a></li>
-            <li><a href="#">Security</a></li>
-          </ul>
-        </div>
-      </div>
-      
-      <div class="footer-bottom">
-        <p>&copy; 2024 AI Task Manager. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
-</body>
+    </header>
+
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
 </html>
