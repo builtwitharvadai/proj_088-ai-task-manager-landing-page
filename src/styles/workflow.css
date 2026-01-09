@@ -1,0 +1,484 @@
+/**
+ * Workflow Section Styles - AI Task Manager Landing Page
+ * Three-step process demonstration with visual flow indicators
+ * 
+ * @module workflow
+ * @generated-from task-id:TASK-006
+ */
+
+/* ============================================================================
+   WORKFLOW SECTION BASE STYLES
+   ============================================================================ */
+
+.workflow {
+  position: relative;
+  padding-block: var(--space-20);
+  background: linear-gradient(
+    180deg,
+    var(--color-gray-50) 0%,
+    var(--color-white) 100%
+  );
+  overflow: hidden;
+}
+
+/* Container for workflow content */
+.workflow .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* ============================================================================
+   WORKFLOW HEADER
+   ============================================================================ */
+
+.workflow__header {
+  text-align: center;
+  margin-block-end: var(--space-16);
+  max-width: 48rem;
+  margin-inline: auto;
+}
+
+.workflow__title {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  color: var(--color-gray-900);
+  margin-block-end: var(--space-4);
+  letter-spacing: -0.02em;
+}
+
+.workflow__subtitle {
+  font-size: var(--font-size-xl);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-gray-600);
+  font-weight: var(--font-weight-normal);
+}
+
+/* ============================================================================
+   WORKFLOW STEPS CONTAINER
+   ============================================================================ */
+
+.workflow__steps {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+  margin-block-end: var(--space-16);
+  position: relative;
+}
+
+/* Desktop horizontal layout */
+@media (min-width: 1024px) {
+  .workflow__steps {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--space-8);
+  }
+}
+
+/* ============================================================================
+   INDIVIDUAL WORKFLOW STEP
+   ============================================================================ */
+
+.workflow__step {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slide-in-up 0.6s ease-out forwards;
+}
+
+/* Staggered animation delays */
+.workflow__step[data-step="1"] {
+  animation-delay: 0.1s;
+}
+
+.workflow__step[data-step="2"] {
+  animation-delay: 0.3s;
+}
+
+.workflow__step[data-step="3"] {
+  animation-delay: 0.5s;
+}
+
+/* Step content wrapper */
+.workflow__step-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--space-8);
+  background: var(--color-white);
+  border-radius: var(--radius-2xl);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+              0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: all var(--duration-normal) var(--ease-out);
+  position: relative;
+  z-index: 2;
+}
+
+.workflow__step-content:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+              0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* ============================================================================
+   STEP NUMBER BADGE
+   ============================================================================ */
+
+.workflow__step-number {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  width: 3rem;
+  height: 3rem;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(
+    135deg,
+    var(--color-primary-500) 0%,
+    var(--color-primary-600) 100%
+  );
+  color: var(--color-white);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  box-shadow: 0 4px 6px -1px rgba(99, 102, 241, 0.3);
+  z-index: 3;
+}
+
+/* ============================================================================
+   STEP ICON
+   ============================================================================ */
+
+.workflow__step-icon {
+  width: 4rem;
+  height: 4rem;
+  display: grid;
+  place-items: center;
+  margin-block-end: var(--space-6);
+  color: var(--color-primary-600);
+  transition: all var(--duration-normal) var(--ease-out);
+}
+
+.workflow__step:hover .workflow__step-icon {
+  transform: scale(1.1) rotate(5deg);
+  color: var(--color-primary-700);
+}
+
+.workflow__step-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* ============================================================================
+   STEP TEXT CONTENT
+   ============================================================================ */
+
+.workflow__step-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.workflow__step-title {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-tight);
+  color: var(--color-gray-900);
+  letter-spacing: -0.01em;
+}
+
+.workflow__step-description {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-gray-600);
+  max-width: 32ch;
+  margin-inline: auto;
+}
+
+/* ============================================================================
+   FLOW CONNECTORS
+   ============================================================================ */
+
+.workflow__connector {
+  display: none;
+  position: absolute;
+  top: 50%;
+  right: -4rem;
+  width: 8rem;
+  height: 2.5rem;
+  transform: translateY(-50%);
+  color: var(--color-primary-400);
+  opacity: 0;
+  animation: fade-in 0.6s ease-out forwards;
+  z-index: 1;
+}
+
+/* Show connectors on desktop */
+@media (min-width: 1024px) {
+  .workflow__connector {
+    display: block;
+  }
+  
+  .workflow__step[data-step="1"] .workflow__connector {
+    animation-delay: 0.4s;
+  }
+  
+  .workflow__step[data-step="2"] .workflow__connector {
+    animation-delay: 0.6s;
+  }
+  
+  /* Hide connector on last step */
+  .workflow__step[data-step="3"] .workflow__connector {
+    display: none;
+  }
+}
+
+/* Connector SVG styling */
+.workflow__connector svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* ============================================================================
+   WORKFLOW CALL TO ACTION
+   ============================================================================ */
+
+.workflow__cta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-block-start: var(--space-12);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slide-in-up 0.6s ease-out 0.7s forwards;
+}
+
+/* ============================================================================
+   ANIMATIONS
+   ============================================================================ */
+
+@keyframes slide-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Pulse animation for step numbers */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.workflow__step-number {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* ============================================================================
+   RESPONSIVE DESIGN
+   ============================================================================ */
+
+/* Tablet adjustments */
+@media (min-width: 768px) {
+  .workflow__title {
+    font-size: var(--font-size-5xl);
+  }
+  
+  .workflow__subtitle {
+    font-size: var(--font-size-2xl);
+  }
+  
+  .workflow__step-content {
+    padding: var(--space-10);
+  }
+  
+  .workflow__step-icon {
+    width: 5rem;
+    height: 5rem;
+  }
+}
+
+/* Desktop adjustments */
+@media (min-width: 1024px) {
+  .workflow {
+    padding-block: var(--space-24);
+  }
+  
+  .workflow__header {
+    margin-block-end: var(--space-20);
+  }
+  
+  .workflow__step-content {
+    min-height: 28rem;
+  }
+  
+  .workflow__step-description {
+    max-width: 28ch;
+  }
+}
+
+/* Large desktop adjustments */
+@media (min-width: 1280px) {
+  .workflow__steps {
+    gap: var(--space-12);
+  }
+  
+  .workflow__connector {
+    right: -6rem;
+    width: 12rem;
+  }
+}
+
+/* ============================================================================
+   ACCESSIBILITY - REDUCED MOTION
+   ============================================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .workflow__step,
+  .workflow__connector,
+  .workflow__cta {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  
+  .workflow__step-content {
+    transition: none;
+  }
+  
+  .workflow__step:hover .workflow__step-content {
+    transform: none;
+  }
+  
+  .workflow__step:hover .workflow__step-icon {
+    transform: none;
+  }
+  
+  .workflow__step-number {
+    animation: none;
+  }
+}
+
+/* ============================================================================
+   ACCESSIBILITY - HIGH CONTRAST MODE
+   ============================================================================ */
+
+@media (prefers-contrast: high) {
+  .workflow__step-content {
+    border: 2px solid var(--color-gray-900);
+  }
+  
+  .workflow__step-number {
+    border: 2px solid var(--color-white);
+  }
+  
+  .workflow__connector {
+    color: var(--color-gray-900);
+  }
+}
+
+/* ============================================================================
+   DARK MODE SUPPORT
+   ============================================================================ */
+
+@media (prefers-color-scheme: dark) {
+  .workflow {
+    background: linear-gradient(
+      180deg,
+      var(--color-gray-900) 0%,
+      var(--color-gray-800) 100%
+    );
+  }
+  
+  .workflow__title {
+    color: var(--color-gray-50);
+  }
+  
+  .workflow__subtitle {
+    color: var(--color-gray-400);
+  }
+  
+  .workflow__step-content {
+    background: var(--color-gray-800);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3),
+                0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  }
+  
+  .workflow__step-content:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4),
+                0 10px 10px -5px rgba(0, 0, 0, 0.3);
+  }
+  
+  .workflow__step-title {
+    color: var(--color-gray-50);
+  }
+  
+  .workflow__step-description {
+    color: var(--color-gray-400);
+  }
+  
+  .workflow__step-icon {
+    color: var(--color-primary-400);
+  }
+  
+  .workflow__step:hover .workflow__step-icon {
+    color: var(--color-primary-300);
+  }
+  
+  .workflow__connector {
+    color: var(--color-primary-600);
+  }
+}
+
+/* ============================================================================
+   PRINT STYLES
+   ============================================================================ */
+
+@media print {
+  .workflow {
+    background: white;
+    padding-block: 2rem;
+  }
+  
+  .workflow__step {
+    opacity: 1;
+    transform: none;
+    animation: none;
+    page-break-inside: avoid;
+  }
+  
+  .workflow__step-content {
+    box-shadow: none;
+    border: 1px solid black;
+  }
+  
+  .workflow__connector {
+    display: none;
+  }
+  
+  .workflow__cta {
+    display: none;
+  }
+}
