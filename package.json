@@ -1,24 +1,21 @@
 {
   "name": "ai-task-manager-landing",
   "version": "1.0.0",
-  "description": "Modern landing page for AI Task Manager application",
-  "type": "module",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint .",
-    "format": "prettier --write \"**/*.{js,css,html,md}\""
+    "test:lighthouse": "npm run build && npx lighthouse http://localhost:4173 --output=html --output-path=./lighthouse-report.html --view",
+    "test:performance": "npm run build && npm run preview & sleep 3 && npm run test:lighthouse && pkill -f vite",
+    "audit:performance": "npm run build && npx lighthouse http://localhost:4173 --only-categories=performance,accessibility,best-practices,seo --output=json --output-path=./lighthouse-results.json"
   },
   "dependencies": {},
   "devDependencies": {
     "vite": "^5.0.0",
-    "eslint": "^8.57.0",
-    "prettier": "^3.1.0"
-  },
-  "engines": {
-    "node": ">=18.0.0"
-  },
-  "license": "MIT"
+    "lighthouse": "^11.0.0",
+    "terser": "^5.0.0"
+  }
 }
