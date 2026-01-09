@@ -1,0 +1,319 @@
+/**
+ * Features Section Styles - AI Task Manager Landing Page
+ * Responsive grid layout with card effects and FontAwesome icon integration
+ * 
+ * @module features
+ * @generated-from task-id:TASK-005
+ */
+
+/* ============================================================================
+   FEATURES SECTION - BASE STYLES
+   ============================================================================ */
+
+.features {
+  position: relative;
+  padding-block: var(--space-10);
+  background: var(--color-white);
+  overflow: hidden;
+}
+
+/* Container for features content */
+.features .container {
+  max-width: var(--container-max-width, 1280px);
+  margin-inline: auto;
+  padding-inline: var(--space-5);
+}
+
+/* ============================================================================
+   FEATURES HEADER
+   ============================================================================ */
+
+.features__header {
+  text-align: center;
+  margin-block-end: var(--space-10);
+  max-width: 800px;
+  margin-inline: auto;
+}
+
+.features__title {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  color: var(--color-gray-900);
+  margin-block-end: var(--space-4);
+  letter-spacing: -0.02em;
+}
+
+.features__subtitle {
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-gray-600);
+  font-weight: var(--font-weight-normal);
+}
+
+/* ============================================================================
+   FEATURES GRID - RESPONSIVE LAYOUT
+   ============================================================================ */
+
+.features__grid {
+  display: grid;
+  gap: var(--space-8);
+  grid-template-columns: 1fr;
+}
+
+/* Tablet breakpoint - 2 columns */
+@media (width >= 768px) {
+  .features__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-6);
+  }
+}
+
+/* Desktop breakpoint - 3 columns */
+@media (width >= 1024px) {
+  .features__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-8);
+  }
+}
+
+/* ============================================================================
+   FEATURE CARD - BASE STYLES
+   ============================================================================ */
+
+.feature-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-8);
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  transition: all var(--duration-normal) var(--ease-out);
+  isolation: isolate;
+}
+
+/* Hover effects */
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  border-color: var(--color-primary-200);
+}
+
+/* Focus visible for keyboard navigation */
+.feature-card:focus-within {
+  outline: 2px solid var(--color-primary-500);
+  outline-offset: 2px;
+}
+
+/* ============================================================================
+   FEATURE CARD ICON - FONTAWESOME INTEGRATION
+   ============================================================================ */
+
+.feature-card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  margin-block-end: var(--space-6);
+  background: linear-gradient(135deg, var(--color-primary-500), var(--color-primary-600));
+  border-radius: var(--radius-md);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  transition: transform var(--duration-normal) var(--ease-out);
+}
+
+.feature-card:hover .feature-card__icon {
+  transform: scale(1.05) rotate(2deg);
+}
+
+/* FontAwesome icon styling */
+.feature-card__icon i {
+  font-size: 32px;
+  color: var(--color-white);
+  line-height: 1;
+}
+
+/* ============================================================================
+   FEATURE CARD CONTENT
+   ============================================================================ */
+
+.feature-card__title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-tight);
+  color: var(--color-gray-900);
+  margin-block-end: var(--space-3);
+  letter-spacing: -0.01em;
+}
+
+.feature-card__description {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-gray-600);
+  font-weight: var(--font-weight-normal);
+  flex-grow: 1;
+}
+
+/* ============================================================================
+   RESPONSIVE TYPOGRAPHY ADJUSTMENTS
+   ============================================================================ */
+
+@media (width >= 768px) {
+  .features__title {
+    font-size: var(--font-size-4xl);
+  }
+
+  .features__subtitle {
+    font-size: var(--font-size-xl);
+  }
+
+  .feature-card {
+    padding: var(--space-7);
+  }
+}
+
+@media (width >= 1024px) {
+  .features {
+    padding-block: var(--space-12);
+  }
+
+  .features__header {
+    margin-block-end: var(--space-12);
+  }
+
+  .feature-card {
+    padding: var(--space-8);
+  }
+
+  .feature-card__icon {
+    width: 72px;
+    height: 72px;
+  }
+
+  .feature-card__icon i {
+    font-size: 36px;
+  }
+}
+
+/* ============================================================================
+   DARK MODE SUPPORT
+   ============================================================================ */
+
+@media (prefers-color-scheme: dark) {
+  .features {
+    background: var(--color-gray-900);
+  }
+
+  .features__title {
+    color: var(--color-gray-50);
+  }
+
+  .features__subtitle {
+    color: var(--color-gray-400);
+  }
+
+  .feature-card {
+    background: var(--color-gray-800);
+    border-color: var(--color-gray-700);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3), 0 1px 2px -1px rgba(0, 0, 0, 0.3);
+  }
+
+  .feature-card:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
+    border-color: var(--color-primary-700);
+  }
+
+  .feature-card__title {
+    color: var(--color-gray-50);
+  }
+
+  .feature-card__description {
+    color: var(--color-gray-400);
+  }
+}
+
+/* ============================================================================
+   REDUCED MOTION SUPPORT
+   ============================================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .feature-card,
+  .feature-card__icon {
+    transition-duration: 0.01ms;
+  }
+
+  .feature-card:hover {
+    transform: none;
+  }
+
+  .feature-card:hover .feature-card__icon {
+    transform: none;
+  }
+}
+
+/* ============================================================================
+   HIGH CONTRAST MODE SUPPORT
+   ============================================================================ */
+
+@media (prefers-contrast: high) {
+  .feature-card {
+    border-width: 2px;
+  }
+
+  .feature-card:hover {
+    border-color: var(--color-primary-500);
+  }
+
+  .feature-card__icon {
+    border: 2px solid var(--color-primary-700);
+  }
+}
+
+/* ============================================================================
+   PRINT STYLES
+   ============================================================================ */
+
+@media print {
+  .features {
+    padding-block: var(--space-6);
+  }
+
+  .features__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+
+  .feature-card {
+    box-shadow: none;
+    border: 1px solid var(--color-gray-300);
+    page-break-inside: avoid;
+  }
+
+  .feature-card__icon {
+    background: var(--color-gray-200);
+    box-shadow: none;
+  }
+
+  .feature-card__icon i {
+    color: var(--color-gray-900);
+  }
+}
+
+/* ============================================================================
+   ANIMATION FEATURE FLAG SUPPORT
+   ============================================================================ */
+
+.features.no-animations .feature-card,
+.features.no-animations .feature-card__icon {
+  transition: none;
+}
+
+.features.no-animations .feature-card:hover {
+  transform: none;
+}
+
+.features.no-animations .feature-card:hover .feature-card__icon {
+  transform: none;
+}
