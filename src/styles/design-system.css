@@ -1,0 +1,304 @@
+/**
+ * Design System - Core CSS Custom Properties and Base Styles
+ * Establishes the visual foundation for the AI Task Manager Landing Page
+ * 
+ * @module design-system
+ * @generated-from task-id:TASK-002
+ */
+
+/* ============================================================================
+   GOOGLE FONTS IMPORT
+   ============================================================================ */
+
+/* Import Inter font family with optimized weights for performance */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* ============================================================================
+   CSS CUSTOM PROPERTIES - ROOT VARIABLES
+   ============================================================================ */
+
+:root {
+  /* ==========================================================================
+     COLOR PALETTE - Primary Colors (Blue/Purple Gradient)
+     ========================================================================== */
+  
+  /* Primary Blue Shades */
+  --color-primary-50: hsl(217, 91%, 97%);
+  --color-primary-100: hsl(217, 91%, 92%);
+  --color-primary-200: hsl(217, 91%, 85%);
+  --color-primary-300: hsl(217, 91%, 75%);
+  --color-primary-400: hsl(217, 91%, 65%);
+  --color-primary-500: hsl(217, 91%, 60%);
+  --color-primary-600: hsl(217, 91%, 50%);
+  --color-primary-700: hsl(217, 91%, 40%);
+  --color-primary-800: hsl(217, 91%, 30%);
+  --color-primary-900: hsl(217, 91%, 20%);
+  
+  /* Secondary Purple Shades */
+  --color-secondary-50: hsl(270, 91%, 97%);
+  --color-secondary-100: hsl(270, 91%, 92%);
+  --color-secondary-200: hsl(270, 91%, 85%);
+  --color-secondary-300: hsl(270, 91%, 75%);
+  --color-secondary-400: hsl(270, 91%, 65%);
+  --color-secondary-500: hsl(270, 91%, 60%);
+  --color-secondary-600: hsl(270, 91%, 50%);
+  --color-secondary-700: hsl(270, 91%, 40%);
+  --color-secondary-800: hsl(270, 91%, 30%);
+  --color-secondary-900: hsl(270, 91%, 20%);
+  
+  /* Accent Colors */
+  --color-accent-cyan: hsl(190, 95%, 55%);
+  --color-accent-teal: hsl(170, 85%, 50%);
+  --color-accent-green: hsl(145, 80%, 50%);
+  --color-accent-orange: hsl(25, 95%, 60%);
+  --color-accent-pink: hsl(330, 85%, 65%);
+  
+  /* ==========================================================================
+     NEUTRAL COLORS - Grays
+     ========================================================================== */
+  
+  --color-gray-50: hsl(210, 20%, 98%);
+  --color-gray-100: hsl(210, 20%, 95%);
+  --color-gray-200: hsl(210, 20%, 90%);
+  --color-gray-300: hsl(210, 20%, 80%);
+  --color-gray-400: hsl(210, 20%, 65%);
+  --color-gray-500: hsl(210, 20%, 50%);
+  --color-gray-600: hsl(210, 20%, 40%);
+  --color-gray-700: hsl(210, 20%, 30%);
+  --color-gray-800: hsl(210, 20%, 20%);
+  --color-gray-900: hsl(210, 20%, 10%);
+  
+  /* Semantic Colors */
+  --color-white: hsl(0, 0%, 100%);
+  --color-black: hsl(0, 0%, 0%);
+  --color-success: hsl(145, 80%, 50%);
+  --color-warning: hsl(45, 95%, 55%);
+  --color-error: hsl(0, 85%, 60%);
+  --color-info: hsl(200, 90%, 55%);
+  
+  /* ==========================================================================
+     GRADIENT DEFINITIONS - SaaS Aesthetic
+     ========================================================================== */
+  
+  /* Primary Gradients */
+  --gradient-primary: linear-gradient(135deg, var(--color-primary-500) 0%, var(--color-secondary-500) 100%);
+  --gradient-primary-soft: linear-gradient(135deg, var(--color-primary-400) 0%, var(--color-secondary-400) 100%);
+  --gradient-primary-vibrant: linear-gradient(135deg, var(--color-primary-600) 0%, var(--color-secondary-600) 100%);
+  
+  /* Background Gradients */
+  --gradient-background-light: linear-gradient(180deg, var(--color-gray-50) 0%, var(--color-white) 100%);
+  --gradient-background-subtle: linear-gradient(135deg, var(--color-primary-50) 0%, var(--color-secondary-50) 100%);
+  --gradient-background-hero: linear-gradient(135deg, var(--color-primary-500) 0%, var(--color-secondary-600) 50%, var(--color-accent-cyan) 100%);
+  
+  /* Overlay Gradients */
+  --gradient-overlay-dark: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
+  --gradient-overlay-light: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 100%);
+  
+  /* Mesh Gradients for Modern SaaS Look */
+  --gradient-mesh: radial-gradient(at 0% 0%, var(--color-primary-400) 0px, transparent 50%),
+                   radial-gradient(at 100% 0%, var(--color-secondary-400) 0px, transparent 50%),
+                   radial-gradient(at 100% 100%, var(--color-accent-cyan) 0px, transparent 50%),
+                   radial-gradient(at 0% 100%, var(--color-primary-300) 0px, transparent 50%);
+  
+  /* ==========================================================================
+     TYPOGRAPHY SCALE
+     ========================================================================== */
+  
+  /* Font Families */
+  --font-family-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  --font-family-mono: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'Droid Sans Mono', 'Source Code Pro', monospace;
+  
+  /* Font Sizes - Fluid Typography with clamp() */
+  --font-size-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+  --font-size-sm: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
+  --font-size-base: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
+  --font-size-lg: clamp(1.125rem, 1rem + 0.625vw, 1.25rem);
+  --font-size-xl: clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem);
+  --font-size-2xl: clamp(1.5rem, 1.3rem + 1vw, 1.875rem);
+  --font-size-3xl: clamp(1.875rem, 1.6rem + 1.375vw, 2.25rem);
+  --font-size-4xl: clamp(2.25rem, 1.9rem + 1.75vw, 3rem);
+  --font-size-5xl: clamp(3rem, 2.5rem + 2.5vw, 3.75rem);
+  --font-size-6xl: clamp(3.75rem, 3rem + 3.75vw, 4.5rem);
+  
+  /* Font Weights */
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  
+  /* Line Heights */
+  --line-height-tight: 1.2;
+  --line-height-snug: 1.375;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.625;
+  --line-height-loose: 2;
+  
+  /* Letter Spacing */
+  --letter-spacing-tight: -0.025em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.025em;
+  --letter-spacing-wider: 0.05em;
+  --letter-spacing-widest: 0.1em;
+  
+  /* ==========================================================================
+     SPACING SCALE - 8px Base Unit System
+     ========================================================================== */
+  
+  --space-0: 0;
+  --space-1: 0.125rem;    /* 2px */
+  --space-2: 0.25rem;     /* 4px */
+  --space-3: 0.5rem;      /* 8px - Base unit */
+  --space-4: 0.75rem;     /* 12px */
+  --space-5: 1rem;        /* 16px */
+  --space-6: 1.25rem;     /* 20px */
+  --space-7: 1.5rem;      /* 24px */
+  --space-8: 2rem;        /* 32px */
+  --space-9: 2.5rem;      /* 40px */
+  --space-10: 3rem;       /* 48px */
+  --space-12: 4rem;       /* 64px */
+  --space-16: 6rem;       /* 96px */
+  --space-20: 8rem;       /* 128px */
+  --space-24: 10rem;      /* 160px */
+  
+  /* ==========================================================================
+     BORDER RADIUS VALUES
+     ========================================================================== */
+  
+  --radius-none: 0;
+  --radius-sm: 0.25rem;   /* 4px */
+  --radius-base: 0.5rem;  /* 8px */
+  --radius-md: 0.75rem;   /* 12px */
+  --radius-lg: 1rem;      /* 16px */
+  --radius-xl: 1.5rem;    /* 24px */
+  --radius-2xl: 2rem;     /* 32px */
+  --radius-full: 9999px;
+  
+  /* ==========================================================================
+     SHADOW DEFINITIONS
+     ========================================================================== */
+  
+  /* Elevation Shadows */
+  --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  --shadow-base: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  --shadow-2xl: 0 35px 60px -15px rgba(0, 0, 0, 0.3);
+  
+  /* Colored Shadows for SaaS Aesthetic */
+  --shadow-primary: 0 10px 40px -10px hsla(217, 91%, 60%, 0.4);
+  --shadow-secondary: 0 10px 40px -10px hsla(270, 91%, 60%, 0.4);
+  --shadow-accent: 0 10px 40px -10px hsla(190, 95%, 55%, 0.4);
+  
+  /* Inner Shadows */
+  --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+  --shadow-inner-lg: inset 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+  
+  /* ==========================================================================
+     RESPONSIVE BREAKPOINTS
+     ========================================================================== */
+  
+  --breakpoint-xs: 375px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+  
+  /* ==========================================================================
+     Z-INDEX SCALE
+     ========================================================================== */
+  
+  --z-index-base: 0;
+  --z-index-dropdown: 1000;
+  --z-index-sticky: 1020;
+  --z-index-fixed: 1030;
+  --z-index-modal-backdrop: 1040;
+  --z-index-modal: 1050;
+  --z-index-popover: 1060;
+  --z-index-tooltip: 1070;
+  
+  /* ==========================================================================
+     TRANSITION DURATIONS
+     ========================================================================== */
+  
+  --duration-fast: 150ms;
+  --duration-base: 250ms;
+  --duration-slow: 350ms;
+  --duration-slower: 500ms;
+  
+  /* ==========================================================================
+     TRANSITION TIMING FUNCTIONS
+     ========================================================================== */
+  
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  
+  /* ==========================================================================
+     CONTAINER WIDTHS
+     ========================================================================== */
+  
+  --container-xs: 20rem;    /* 320px */
+  --container-sm: 24rem;    /* 384px */
+  --container-md: 28rem;    /* 448px */
+  --container-lg: 32rem;    /* 512px */
+  --container-xl: 36rem;    /* 576px */
+  --container-2xl: 42rem;   /* 672px */
+  --container-3xl: 48rem;   /* 768px */
+  --container-4xl: 56rem;   /* 896px */
+  --container-5xl: 64rem;   /* 1024px */
+  --container-6xl: 72rem;   /* 1152px */
+  --container-7xl: 80rem;   /* 1280px */
+  --container-full: 100%;
+}
+
+/* ============================================================================
+   DARK MODE SUPPORT (Optional - for future implementation)
+   ============================================================================ */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Inverted color values for dark mode */
+    --color-gray-50: hsl(210, 20%, 10%);
+    --color-gray-100: hsl(210, 20%, 15%);
+    --color-gray-200: hsl(210, 20%, 20%);
+    --color-gray-300: hsl(210, 20%, 30%);
+    --color-gray-400: hsl(210, 20%, 40%);
+    --color-gray-500: hsl(210, 20%, 50%);
+    --color-gray-600: hsl(210, 20%, 65%);
+    --color-gray-700: hsl(210, 20%, 80%);
+    --color-gray-800: hsl(210, 20%, 90%);
+    --color-gray-900: hsl(210, 20%, 95%);
+  }
+}
+
+/* ============================================================================
+   HIGH CONTRAST MODE SUPPORT
+   ============================================================================ */
+
+@media (prefers-contrast: high) {
+  :root {
+    /* Enhanced contrast for accessibility */
+    --color-primary-500: hsl(217, 100%, 50%);
+    --color-secondary-500: hsl(270, 100%, 50%);
+  }
+}
+
+/* ============================================================================
+   REDUCED MOTION SUPPORT
+   ============================================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    /* Reduced animation durations for accessibility */
+    --duration-fast: 1ms;
+    --duration-base: 1ms;
+    --duration-slow: 1ms;
+    --duration-slower: 1ms;
+  }
+}

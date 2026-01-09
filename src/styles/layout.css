@@ -1,0 +1,925 @@
+/**
+ * Layout Utilities and Responsive Grid System
+ * Provides container classes, CSS Grid/Flexbox utilities, responsive layout classes,
+ * and spacing utilities for the AI Task Manager Landing Page
+ * 
+ * @module layout
+ * @generated-from task-id:TASK-002
+ */
+
+/* ============================================================================
+   CONTAINER SYSTEM - Max-width Containers with Responsive Padding
+   ============================================================================ */
+
+/* Base container with fluid padding */
+.container {
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: var(--space-5);
+}
+
+/* Container size variants */
+.container-xs {
+  max-width: var(--container-xs);
+  margin-inline: auto;
+  padding-inline: var(--space-5);
+}
+
+.container-sm {
+  max-width: var(--container-sm);
+  margin-inline: auto;
+  padding-inline: var(--space-5);
+}
+
+.container-md {
+  max-width: var(--container-md);
+  margin-inline: auto;
+  padding-inline: var(--space-5);
+}
+
+.container-lg {
+  max-width: var(--container-lg);
+  margin-inline: auto;
+  padding-inline: var(--space-5);
+}
+
+.container-xl {
+  max-width: var(--container-xl);
+  margin-inline: auto;
+  padding-inline: var(--space-5);
+}
+
+.container-2xl {
+  max-width: var(--container-2xl);
+  margin-inline: auto;
+  padding-inline: var(--space-5);
+}
+
+.container-3xl {
+  max-width: var(--container-3xl);
+  margin-inline: auto;
+  padding-inline: var(--space-5);
+}
+
+.container-4xl {
+  max-width: var(--container-4xl);
+  margin-inline: auto;
+  padding-inline: var(--space-5);
+}
+
+.container-5xl {
+  max-width: var(--container-5xl);
+  margin-inline: auto;
+  padding-inline: var(--space-5);
+}
+
+.container-6xl {
+  max-width: var(--container-6xl);
+  margin-inline: auto;
+  padding-inline: var(--space-5);
+}
+
+.container-7xl {
+  max-width: var(--container-7xl);
+  margin-inline: auto;
+  padding-inline: var(--space-5);
+}
+
+.container-full {
+  max-width: 100%;
+  margin-inline: auto;
+  padding-inline: var(--space-5);
+}
+
+/* Responsive container padding adjustments */
+@media (min-width: 640px) {
+  .container,
+  .container-xs,
+  .container-sm,
+  .container-md,
+  .container-lg,
+  .container-xl,
+  .container-2xl,
+  .container-3xl,
+  .container-4xl,
+  .container-5xl,
+  .container-6xl,
+  .container-7xl,
+  .container-full {
+    padding-inline: var(--space-6);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container,
+  .container-xs,
+  .container-sm,
+  .container-md,
+  .container-lg,
+  .container-xl,
+  .container-2xl,
+  .container-3xl,
+  .container-4xl,
+  .container-5xl,
+  .container-6xl,
+  .container-7xl,
+  .container-full {
+    padding-inline: var(--space-8);
+  }
+}
+
+/* ============================================================================
+   CSS GRID UTILITIES
+   ============================================================================ */
+
+/* Grid display */
+.grid {
+  display: grid;
+}
+
+/* Grid template columns */
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grid-cols-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.grid-cols-5 {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.grid-cols-6 {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.grid-cols-12 {
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
+/* Auto-fit responsive grid */
+.grid-auto-fit {
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+}
+
+.grid-auto-fill {
+  grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
+}
+
+/* Grid gap utilities */
+.gap-0 {
+  gap: var(--space-0);
+}
+
+.gap-1 {
+  gap: var(--space-1);
+}
+
+.gap-2 {
+  gap: var(--space-2);
+}
+
+.gap-3 {
+  gap: var(--space-3);
+}
+
+.gap-4 {
+  gap: var(--space-4);
+}
+
+.gap-5 {
+  gap: var(--space-5);
+}
+
+.gap-6 {
+  gap: var(--space-6);
+}
+
+.gap-7 {
+  gap: var(--space-7);
+}
+
+.gap-8 {
+  gap: var(--space-8);
+}
+
+.gap-9 {
+  gap: var(--space-9);
+}
+
+.gap-10 {
+  gap: var(--space-10);
+}
+
+.gap-12 {
+  gap: var(--space-12);
+}
+
+.gap-16 {
+  gap: var(--space-16);
+}
+
+/* Column gap utilities */
+.gap-x-3 {
+  column-gap: var(--space-3);
+}
+
+.gap-x-4 {
+  column-gap: var(--space-4);
+}
+
+.gap-x-5 {
+  column-gap: var(--space-5);
+}
+
+.gap-x-6 {
+  column-gap: var(--space-6);
+}
+
+.gap-x-8 {
+  column-gap: var(--space-8);
+}
+
+/* Row gap utilities */
+.gap-y-3 {
+  row-gap: var(--space-3);
+}
+
+.gap-y-4 {
+  row-gap: var(--space-4);
+}
+
+.gap-y-5 {
+  row-gap: var(--space-5);
+}
+
+.gap-y-6 {
+  row-gap: var(--space-6);
+}
+
+.gap-y-8 {
+  row-gap: var(--space-8);
+}
+
+/* Grid column span */
+.col-span-1 {
+  grid-column: span 1 / span 1;
+}
+
+.col-span-2 {
+  grid-column: span 2 / span 2;
+}
+
+.col-span-3 {
+  grid-column: span 3 / span 3;
+}
+
+.col-span-4 {
+  grid-column: span 4 / span 4;
+}
+
+.col-span-6 {
+  grid-column: span 6 / span 6;
+}
+
+.col-span-12 {
+  grid-column: span 12 / span 12;
+}
+
+.col-span-full {
+  grid-column: 1 / -1;
+}
+
+/* ============================================================================
+   FLEXBOX UTILITIES
+   ============================================================================ */
+
+/* Flex display */
+.flex {
+  display: flex;
+}
+
+.inline-flex {
+  display: inline-flex;
+}
+
+/* Flex direction */
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-row-reverse {
+  flex-direction: row-reverse;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-col-reverse {
+  flex-direction: column-reverse;
+}
+
+/* Flex wrap */
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
+
+.flex-wrap-reverse {
+  flex-wrap: wrap-reverse;
+}
+
+/* Justify content */
+.justify-start {
+  justify-content: flex-start;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+.justify-evenly {
+  justify-content: space-evenly;
+}
+
+/* Align items */
+.items-start {
+  align-items: flex-start;
+}
+
+.items-end {
+  align-items: flex-end;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.items-baseline {
+  align-items: baseline;
+}
+
+.items-stretch {
+  align-items: stretch;
+}
+
+/* Align content */
+.content-start {
+  align-content: flex-start;
+}
+
+.content-end {
+  align-content: flex-end;
+}
+
+.content-center {
+  align-content: center;
+}
+
+.content-between {
+  align-content: space-between;
+}
+
+.content-around {
+  align-content: space-around;
+}
+
+/* Flex grow and shrink */
+.flex-1 {
+  flex: 1 1 0%;
+}
+
+.flex-auto {
+  flex: 1 1 auto;
+}
+
+.flex-initial {
+  flex: 0 1 auto;
+}
+
+.flex-none {
+  flex: none;
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
+
+.flex-shrink {
+  flex-shrink: 1;
+}
+
+.flex-shrink-0 {
+  flex-shrink: 0;
+}
+
+/* ============================================================================
+   SPACING UTILITIES - Margin and Padding
+   ============================================================================ */
+
+/* Margin utilities */
+.m-0 {
+  margin: var(--space-0);
+}
+
+.m-auto {
+  margin: auto;
+}
+
+.mx-auto {
+  margin-inline: auto;
+}
+
+.my-auto {
+  margin-block: auto;
+}
+
+.mt-3 {
+  margin-block-start: var(--space-3);
+}
+
+.mt-5 {
+  margin-block-start: var(--space-5);
+}
+
+.mt-8 {
+  margin-block-start: var(--space-8);
+}
+
+.mt-10 {
+  margin-block-start: var(--space-10);
+}
+
+.mt-12 {
+  margin-block-start: var(--space-12);
+}
+
+.mb-3 {
+  margin-block-end: var(--space-3);
+}
+
+.mb-5 {
+  margin-block-end: var(--space-5);
+}
+
+.mb-8 {
+  margin-block-end: var(--space-8);
+}
+
+.mb-10 {
+  margin-block-end: var(--space-10);
+}
+
+.mb-12 {
+  margin-block-end: var(--space-12);
+}
+
+.ml-3 {
+  margin-inline-start: var(--space-3);
+}
+
+.ml-5 {
+  margin-inline-start: var(--space-5);
+}
+
+.mr-3 {
+  margin-inline-end: var(--space-3);
+}
+
+.mr-5 {
+  margin-inline-end: var(--space-5);
+}
+
+.mx-5 {
+  margin-inline: var(--space-5);
+}
+
+.mx-8 {
+  margin-inline: var(--space-8);
+}
+
+.my-5 {
+  margin-block: var(--space-5);
+}
+
+.my-8 {
+  margin-block: var(--space-8);
+}
+
+.my-10 {
+  margin-block: var(--space-10);
+}
+
+.my-12 {
+  margin-block: var(--space-12);
+}
+
+/* Padding utilities */
+.p-0 {
+  padding: var(--space-0);
+}
+
+.p-3 {
+  padding: var(--space-3);
+}
+
+.p-5 {
+  padding: var(--space-5);
+}
+
+.p-8 {
+  padding: var(--space-8);
+}
+
+.p-10 {
+  padding: var(--space-10);
+}
+
+.px-3 {
+  padding-inline: var(--space-3);
+}
+
+.px-5 {
+  padding-inline: var(--space-5);
+}
+
+.px-8 {
+  padding-inline: var(--space-8);
+}
+
+.py-3 {
+  padding-block: var(--space-3);
+}
+
+.py-5 {
+  padding-block: var(--space-5);
+}
+
+.py-8 {
+  padding-block: var(--space-8);
+}
+
+.py-10 {
+  padding-block: var(--space-10);
+}
+
+.py-12 {
+  padding-block: var(--space-12);
+}
+
+.pt-5 {
+  padding-block-start: var(--space-5);
+}
+
+.pt-8 {
+  padding-block-start: var(--space-8);
+}
+
+.pt-10 {
+  padding-block-start: var(--space-10);
+}
+
+.pb-5 {
+  padding-block-end: var(--space-5);
+}
+
+.pb-8 {
+  padding-block-end: var(--space-8);
+}
+
+.pb-10 {
+  padding-block-end: var(--space-10);
+}
+
+/* ============================================================================
+   COMMON LAYOUT PATTERNS
+   ============================================================================ */
+
+/* Center content horizontally and vertically */
+.center {
+  display: grid;
+  place-items: center;
+}
+
+/* Stack layout with consistent spacing */
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.stack-sm {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.stack-lg {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+/* Cluster layout for inline elements */
+.cluster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  align-items: center;
+}
+
+/* Sidebar layout */
+.sidebar-layout {
+  display: grid;
+  gap: var(--space-8);
+}
+
+/* Section spacing */
+.section {
+  padding-block: var(--space-12);
+}
+
+.section-sm {
+  padding-block: var(--space-8);
+}
+
+.section-lg {
+  padding-block: var(--space-16);
+}
+
+.section-xl {
+  padding-block: var(--space-20);
+}
+
+/* ============================================================================
+   RESPONSIVE UTILITIES - Mobile-First Breakpoints
+   ============================================================================ */
+
+/* Tablet breakpoint (640px) */
+@media (min-width: 640px) {
+  .sm\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .sm\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .sm\:flex-row {
+    flex-direction: row;
+  }
+
+  .sm\:gap-6 {
+    gap: var(--space-6);
+  }
+
+  .sm\:gap-8 {
+    gap: var(--space-8);
+  }
+
+  .sm\:px-6 {
+    padding-inline: var(--space-6);
+  }
+
+  .sm\:py-8 {
+    padding-block: var(--space-8);
+  }
+
+  .sidebar-layout {
+    grid-template-columns: 250px 1fr;
+  }
+}
+
+/* Desktop breakpoint (768px) */
+@media (min-width: 768px) {
+  .md\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .md\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .md\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .md\:flex-row {
+    flex-direction: row;
+  }
+
+  .md\:gap-8 {
+    gap: var(--space-8);
+  }
+
+  .md\:gap-10 {
+    gap: var(--space-10);
+  }
+
+  .md\:px-8 {
+    padding-inline: var(--space-8);
+  }
+
+  .md\:py-10 {
+    padding-block: var(--space-10);
+  }
+
+  .md\:py-12 {
+    padding-block: var(--space-12);
+  }
+
+  .sidebar-layout {
+    grid-template-columns: 300px 1fr;
+  }
+}
+
+/* Large desktop breakpoint (1024px) */
+@media (min-width: 1024px) {
+  .lg\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .lg\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .lg\:grid-cols-5 {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .lg\:gap-10 {
+    gap: var(--space-10);
+  }
+
+  .lg\:gap-12 {
+    gap: var(--space-12);
+  }
+
+  .lg\:px-10 {
+    padding-inline: var(--space-10);
+  }
+
+  .lg\:py-12 {
+    padding-block: var(--space-12);
+  }
+
+  .lg\:py-16 {
+    padding-block: var(--space-16);
+  }
+
+  .sidebar-layout {
+    grid-template-columns: 350px 1fr;
+  }
+}
+
+/* Extra large desktop breakpoint (1280px) */
+@media (min-width: 1280px) {
+  .xl\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .xl\:grid-cols-5 {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .xl\:grid-cols-6 {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .xl\:gap-12 {
+    gap: var(--space-12);
+  }
+
+  .xl\:gap-16 {
+    gap: var(--space-16);
+  }
+
+  .xl\:py-16 {
+    padding-block: var(--space-16);
+  }
+
+  .xl\:py-20 {
+    padding-block: var(--space-20);
+  }
+}
+
+/* ============================================================================
+   DISPLAY UTILITIES
+   ============================================================================ */
+
+.block {
+  display: block;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.inline {
+  display: inline;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Responsive display utilities */
+@media (min-width: 640px) {
+  .sm\:block {
+    display: block;
+  }
+
+  .sm\:hidden {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:block {
+    display: block;
+  }
+
+  .md\:hidden {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:block {
+    display: block;
+  }
+
+  .lg\:hidden {
+    display: none;
+  }
+}
+
+/* ============================================================================
+   WIDTH AND HEIGHT UTILITIES
+   ============================================================================ */
+
+.w-full {
+  width: 100%;
+}
+
+.w-auto {
+  width: auto;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.h-auto {
+  height: auto;
+}
+
+.min-h-screen {
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+/* ============================================================================
+   OVERFLOW UTILITIES
+   ============================================================================ */
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.overflow-auto {
+  overflow: auto;
+}
+
+.overflow-x-auto {
+  overflow-x: auto;
+}
+
+.overflow-y-auto {
+  overflow-y: auto;
+}
