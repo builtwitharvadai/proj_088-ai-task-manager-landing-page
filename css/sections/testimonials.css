@@ -1,0 +1,403 @@
+/* ============================================
+   AI Task Manager - Testimonials Section
+   Social Proof with Customer Testimonials
+   ============================================ */
+
+/* ============================================
+   Testimonials Section Container
+   ============================================ */
+
+.testimonials-section {
+  padding-block: var(--space-3xl);
+  background-color: var(--color-surface);
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonials-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--color-border) 50%,
+    transparent 100%
+  );
+}
+
+/* ============================================
+   Section Header
+   ============================================ */
+
+.testimonials-header {
+  text-align: center;
+  margin-bottom: var(--space-3xl);
+  max-width: 800px;
+  margin-inline: auto;
+}
+
+.testimonials-header h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-md);
+  line-height: var(--line-height-tight);
+}
+
+.testimonials-header p {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: 0;
+}
+
+/* ============================================
+   Testimonials Grid Layout
+   ============================================ */
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+  max-width: var(--container-max-width);
+  margin-inline: auto;
+  padding-inline: var(--container-padding);
+}
+
+/* Tablet: 2 columns */
+@media (min-width: 768px) {
+  .testimonials-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-2xl);
+  }
+}
+
+/* Desktop: 3 columns */
+@media (min-width: 1024px) {
+  .testimonials-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ============================================
+   Testimonial Card Styles
+   ============================================ */
+
+.testimonial-card {
+  background-color: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-2xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  transition: all var(--transition-base);
+  position: relative;
+  isolation: isolate;
+}
+
+.testimonial-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-xl);
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    var(--color-primary-200) 0%,
+    transparent 50%,
+    var(--color-accent-purple) 100%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity var(--transition-base);
+  z-index: -1;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-primary-200);
+}
+
+.testimonial-card:hover::before {
+  opacity: 1;
+}
+
+/* ============================================
+   Quotation Mark Styling
+   ============================================ */
+
+.testimonial-quote {
+  position: relative;
+  margin-bottom: 0;
+}
+
+.testimonial-quote::before {
+  content: '"';
+  position: absolute;
+  top: -0.5rem;
+  left: -0.75rem;
+  font-size: 4rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary-200);
+  line-height: 1;
+  opacity: 0.5;
+  font-family: Georgia, serif;
+  z-index: -1;
+}
+
+.testimonial-quote p {
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-primary);
+  font-style: italic;
+  margin-bottom: 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* ============================================
+   Customer Information Section
+   ============================================ */
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-top: auto;
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--color-border);
+}
+
+/* ============================================
+   Avatar Image Styling
+   ============================================ */
+
+.testimonial-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-full);
+  object-fit: cover;
+  border: 2px solid var(--color-border);
+  transition: all var(--transition-base);
+  flex-shrink: 0;
+}
+
+.testimonial-card:hover .testimonial-avatar {
+  border-color: var(--color-primary-400);
+  transform: scale(1.05);
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+}
+
+/* ============================================
+   Author Details Typography
+   ============================================ */
+
+.testimonial-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  min-width: 0;
+}
+
+.testimonial-name {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  margin-bottom: 0;
+  line-height: 1.2;
+}
+
+.testimonial-role {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.2;
+  margin-bottom: 0;
+}
+
+.testimonial-company {
+  font-size: var(--font-size-sm);
+  color: var(--color-primary-600);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.2;
+  margin-bottom: 0;
+}
+
+/* ============================================
+   Featured Testimonial Variant
+   ============================================ */
+
+.testimonial-card.featured {
+  background: linear-gradient(
+    135deg,
+    var(--color-primary-50) 0%,
+    var(--color-background) 100%
+  );
+  border-color: var(--color-primary-300);
+  box-shadow: var(--shadow-md);
+}
+
+.testimonial-card.featured:hover {
+  box-shadow: var(--shadow-xl);
+}
+
+/* ============================================
+   Responsive Adjustments
+   ============================================ */
+
+/* Mobile: Enhanced spacing */
+@media (max-width: 767px) {
+  .testimonials-section {
+    padding-block: var(--space-2xl);
+  }
+
+  .testimonials-header {
+    margin-bottom: var(--space-2xl);
+  }
+
+  .testimonial-card {
+    padding: var(--space-lg);
+  }
+
+  .testimonial-quote::before {
+    font-size: 3rem;
+    top: -0.25rem;
+    left: -0.5rem;
+  }
+
+  .testimonial-quote p {
+    font-size: var(--font-size-base);
+  }
+
+  .testimonial-avatar {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+/* Tablet: Optimized layout */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .testimonial-card {
+    padding: var(--space-xl);
+  }
+}
+
+/* Desktop: Enhanced spacing */
+@media (min-width: 1024px) {
+  .testimonials-section {
+    padding-block: 5rem;
+  }
+
+  .testimonial-card {
+    padding: var(--space-2xl);
+  }
+
+  .testimonial-quote p {
+    font-size: var(--font-size-xl);
+  }
+}
+
+/* ============================================
+   Accessibility Enhancements
+   ============================================ */
+
+/* Focus visible states */
+.testimonial-card:focus-within {
+  outline: 2px solid var(--color-primary-500);
+  outline-offset: 2px;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .testimonial-card,
+  .testimonial-avatar,
+  .testimonial-card::before {
+    transition: none !important;
+  }
+
+  .testimonial-card:hover {
+    transform: none;
+  }
+
+  .testimonial-card:hover .testimonial-avatar {
+    transform: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .testimonial-card {
+    border-width: 2px;
+  }
+
+  .testimonial-quote::before {
+    opacity: 0.8;
+  }
+
+  .testimonial-avatar {
+    border-width: 3px;
+  }
+}
+
+/* Dark mode optimizations */
+@media (prefers-color-scheme: dark) {
+  .testimonial-card {
+    background-color: var(--color-surface);
+  }
+
+  .testimonial-card.featured {
+    background: linear-gradient(
+      135deg,
+      var(--color-primary-900) 0%,
+      var(--color-surface) 100%
+    );
+  }
+
+  .testimonial-quote::before {
+    color: var(--color-primary-700);
+    opacity: 0.3;
+  }
+}
+
+/* ============================================
+   Print Styles
+   ============================================ */
+
+@media print {
+  .testimonials-section {
+    padding-block: 2rem;
+    background-color: transparent;
+  }
+
+  .testimonial-card {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    border: 1px solid #000;
+    box-shadow: none;
+  }
+
+  .testimonial-card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .testimonial-avatar {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+}
+
+/* ============================================
+   Feature Flag Support
+   ============================================ */
+
+.testimonials-section[data-feature-flag='off'] {
+  display: none;
+}
