@@ -1,352 +1,180 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <!-- Character encoding MUST be first -->
     <meta charset="UTF-8" />
-
-    <!-- Viewport for responsive design -->
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, viewport-fit=cover"
     />
-
-    <!-- Document title with site name -->
-    <title>AI Task Manager - Streamline Your Workflow | TaskFlow AI</title>
-
-    <!-- Meta descriptions for SEO -->
+    <title>AI Task Manager - Intelligent Task Management Platform</title>
     <meta
       name="description"
-      content="Transform your task management with AI-powered automation. TaskFlow AI helps teams collaborate efficiently and achieve more."
+      content="Transform your workflow with AI-powered task management. Automate prioritization, get intelligent insights, and boost team productivity."
     />
 
-    <!-- Open Graph for social media -->
-    <meta property="og:title" content="AI Task Manager - Streamline Your Workflow" />
+    <!-- Open Graph -->
+    <meta property="og:title" content="AI Task Manager - Intelligent Task Management Platform" />
     <meta
       property="og:description"
-      content="Transform your task management with AI-powered automation. TaskFlow AI helps teams collaborate efficiently and achieve more."
+      content="Transform your workflow with AI-powered task management. Automate prioritization, get intelligent insights, and boost team productivity."
     />
-    <meta property="og:image" content="https://taskflow-ai.com/og-image.jpg" />
-    <meta property="og:url" content="https://taskflow-ai.com" />
     <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://yourdomain.com" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:creator" content="@taskflowai" />
 
-    <!-- Canonical URL to prevent duplicate content -->
-    <link rel="canonical" href="https://taskflow-ai.com" />
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://yourdomain.com" />
 
-    <!-- DNS prefetch and preconnect for performance -->
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
 
-    <!-- Preload critical resources -->
+    <!-- Font Awesome for icons -->
     <link
-      rel="preload"
-      href="css/main.css"
-      as="style"
-    />
-    <link
-      rel="preload"
-      href="js/main.js"
-      as="script"
-    />
-
-    <!-- Theme color -->
-    <meta
-      name="theme-color"
-      content="#6366f1"
-      media="(prefers-color-scheme: light)"
-    />
-    <meta
-      name="theme-color"
-      content="#4f46e5"
-      media="(prefers-color-scheme: dark)"
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/components.css" />
-    <link rel="stylesheet" href="css/sections/hero.css" />
-    <link rel="stylesheet" href="css/sections/features.css" />
-    <link rel="stylesheet" href="css/sections/workflow.css" />
-    <link rel="stylesheet" href="css/sections/testimonials.css" />
+    <link rel="stylesheet" href="css/sections/footer.css" />
   </head>
   <body>
     <!-- Skip navigation for accessibility -->
     <a href="#main" class="skip-link">Skip to main content</a>
 
     <!-- Header -->
-    <header role="banner">
-      <nav role="navigation" aria-label="Main navigation">
-        <div class="nav-container">
-          <a href="/" class="logo" aria-label="TaskFlow AI Home">
-            <img
-              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Crect width='100%25' height='100%25' fill='%23f3f4f6'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%239ca3af' font-family='sans-serif' font-size='14'%3ELoading...%3C/text%3E%3C/svg%3E"
-              data-src="images/logo.svg"
-              alt="TaskFlow AI Logo"
-              width="40"
-              height="40"
-              loading="eager"
-            />
-            <span>TaskFlow AI</span>
-          </a>
-          <ul role="list" class="nav-menu">
-            <li><a href="#features">Features</a></li>
-            <li><a href="#workflow">Workflow</a></li>
-            <li><a href="#testimonials">Testimonials</a></li>
-            <li><a href="#pricing">Pricing</a></li>
-          </ul>
-          <div class="nav-actions">
-            <a href="#" class="btn btn-secondary">Sign In</a>
-            <a href="#" class="btn btn-primary">Get Started</a>
-          </div>
-        </div>
+    <header class="header" role="banner">
+      <nav class="nav container" role="navigation" aria-label="Main navigation">
+        <a href="#" class="nav-brand">AI Task Manager</a>
+        <button
+          class="nav-toggle"
+          aria-expanded="false"
+          aria-controls="nav-menu"
+          aria-label="Toggle navigation menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="nav-menu" id="nav-menu" role="list">
+          <li><a href="#features" class="nav-link">Features</a></li>
+          <li><a href="#workflow" class="nav-link">Workflow</a></li>
+          <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+          <li><a href="#pricing" class="nav-link">Pricing</a></li>
+          <li><a href="#contact" class="nav-link btn btn-primary">Get Started</a></li>
+        </ul>
       </nav>
     </header>
 
-    <!-- Main content with landmark -->
+    <!-- Main Content -->
     <main id="main" role="main">
       <!-- Hero Section -->
-      <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-container">
+      <section class="hero" id="hero">
+        <div class="container">
           <div class="hero-content">
-            <h1 id="hero-title">Transform Your Task Management with AI</h1>
+            <h1 class="hero-title">
+              Supercharge Your Productivity with AI-Powered Task Management
+            </h1>
             <p class="hero-description">
-              Streamline workflows, boost productivity, and achieve more with
-              intelligent automation that adapts to your team's needs.
+              Transform your workflow with intelligent task prioritization, automated
+              scheduling, and real-time collaboration. Let AI handle the complexity while
+              you focus on what matters.
             </p>
-            <div class="hero-actions">
-              <a href="#" class="btn btn-primary btn-lg">Start Free Trial</a>
-              <a href="#" class="btn btn-secondary btn-lg">Watch Demo</a>
+            <div class="hero-cta">
+              <a href="#contact" class="btn btn-cta">Start Free Trial</a>
+              <a href="#features" class="btn btn-secondary">Learn More</a>
             </div>
-          </div>
-          <div class="hero-image">
-            <picture>
-              <source
-                media="(min-width: 768px)"
-                data-srcset="images/hero-desktop.webp 1200w, images/hero-desktop-2x.webp 2400w"
-                type="image/webp"
-              />
-              <source
-                media="(min-width: 768px)"
-                data-srcset="images/hero-desktop.jpg 1200w, images/hero-desktop-2x.jpg 2400w"
-                type="image/jpeg"
-              />
-              <source
-                data-srcset="images/hero-mobile.webp 600w, images/hero-mobile-2x.webp 1200w"
-                type="image/webp"
-              />
-              <img
-                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Crect width='100%25' height='100%25' fill='%23f3f4f6'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%239ca3af' font-family='sans-serif' font-size='14'%3ELoading...%3C/text%3E%3C/svg%3E"
-                data-src="images/hero-mobile.jpg"
-                data-srcset="images/hero-mobile.jpg 600w, images/hero-mobile-2x.jpg 1200w"
-                sizes="(min-width: 768px) 1200px, 600px"
-                alt="TaskFlow AI Dashboard Interface"
-                width="600"
-                height="400"
-                loading="eager"
-                decoding="async"
-              />
-            </picture>
           </div>
         </div>
       </section>
 
       <!-- Features Section -->
-      <section id="features" class="features" aria-labelledby="features-title">
+      <section class="features" id="features">
         <div class="container">
-          <h2 id="features-title">Powerful Features for Modern Teams</h2>
-          <p class="section-description">
-            Everything you need to manage tasks efficiently and intelligently
+          <h2 class="section-title text-center">Powerful Features</h2>
+          <p class="section-description text-center">
+            Everything you need to manage tasks efficiently
           </p>
           <div class="features-grid">
-            <article class="feature-card">
+            <div class="feature-card">
               <div class="feature-icon">
-                <img
-                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64'%3E%3Crect width='100%25' height='100%25' fill='%23f3f4f6'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%239ca3af' font-family='sans-serif' font-size='14'%3ELoading...%3C/text%3E%3C/svg%3E"
-                  data-src="images/icons/ai-automation.svg"
-                  alt=""
-                  width="64"
-                  height="64"
-                  loading="lazy"
-                  decoding="async"
-                  aria-hidden="true"
-                />
+                <i class="fas fa-brain" aria-hidden="true"></i>
               </div>
-              <h3>AI-Powered Automation</h3>
+              <h3>AI-Powered Prioritization</h3>
               <p>
-                Intelligent task prioritization and automated workflows that
-                learn from your team's patterns.
+                Let our AI analyze your tasks and automatically prioritize them based on
+                deadlines, dependencies, and importance.
               </p>
-            </article>
-            <article class="feature-card">
+            </div>
+            <div class="feature-card">
               <div class="feature-icon">
-                <img
-                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64'%3E%3Crect width='100%25' height='100%25' fill='%23f3f4f6'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%239ca3af' font-family='sans-serif' font-size='14'%3ELoading...%3C/text%3E%3C/svg%3E"
-                  data-src="images/icons/collaboration.svg"
-                  alt=""
-                  width="64"
-                  height="64"
-                  loading="lazy"
-                  decoding="async"
-                  aria-hidden="true"
-                />
+                <i class="fas fa-users" aria-hidden="true"></i>
               </div>
-              <h3>Real-Time Collaboration</h3>
+              <h3>Team Collaboration</h3>
               <p>
-                Work together seamlessly with live updates, comments, and
-                instant notifications.
+                Work seamlessly with your team through real-time updates, comments, and
+                shared workspaces.
               </p>
-            </article>
-            <article class="feature-card">
+            </div>
+            <div class="feature-card">
               <div class="feature-icon">
-                <img
-                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64'%3E%3Crect width='100%25' height='100%25' fill='%23f3f4f6'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%239ca3af' font-family='sans-serif' font-size='14'%3ELoading...%3C/text%3E%3C/svg%3E"
-                  data-src="images/icons/analytics.svg"
-                  alt=""
-                  width="64"
-                  height="64"
-                  loading="lazy"
-                  decoding="async"
-                  aria-hidden="true"
-                />
+                <i class="fas fa-chart-line" aria-hidden="true"></i>
               </div>
-              <h3>Advanced Analytics</h3>
+              <h3>Analytics & Insights</h3>
               <p>
-                Gain insights into team performance with detailed reports and
-                predictive analytics.
+                Get detailed insights into your productivity patterns and team performance
+                with advanced analytics.
               </p>
-            </article>
-            <article class="feature-card">
-              <div class="feature-icon">
-                <img
-                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64'%3E%3Crect width='100%25' height='100%25' fill='%23f3f4f6'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%239ca3af' font-family='sans-serif' font-size='14'%3ELoading...%3C/text%3E%3C/svg%3E"
-                  data-src="images/icons/integrations.svg"
-                  alt=""
-                  width="64"
-                  height="64"
-                  loading="lazy"
-                  decoding="async"
-                  aria-hidden="true"
-                />
-              </div>
-              <h3>Seamless Integrations</h3>
-              <p>
-                Connect with your favorite tools and services for a unified
-                workflow experience.
-              </p>
-            </article>
+            </div>
           </div>
         </div>
       </section>
 
       <!-- Workflow Section -->
-      <section id="workflow" class="workflow" aria-labelledby="workflow-title">
+      <section class="workflow" id="workflow">
         <div class="container">
-          <h2 id="workflow-title">How It Works</h2>
-          <p class="section-description">
-            Get started in minutes with our intuitive three-step process
+          <h2 class="section-title text-center">How It Works</h2>
+          <p class="section-description text-center">
+            Get started in three simple steps
           </p>
           <div class="workflow-steps">
-            <article class="workflow-step">
-              <div class="step-number" aria-hidden="true">1</div>
-              <div class="step-image">
-                <img
-                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect width='100%25' height='100%25' fill='%23f3f4f6'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%239ca3af' font-family='sans-serif' font-size='14'%3ELoading...%3C/text%3E%3C/svg%3E"
-                  data-src="images/workflow/step1.webp"
-                  data-srcset="images/workflow/step1.webp 400w, images/workflow/step1-2x.webp 800w"
-                  sizes="(min-width: 768px) 400px, 100vw"
-                  alt="Create your workspace interface"
-                  width="400"
-                  height="300"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-              <h3>Create Your Workspace</h3>
-              <p>
-                Set up your team workspace in seconds with customizable
-                templates and AI-guided setup.
-              </p>
-            </article>
-            <article class="workflow-step">
-              <div class="step-number" aria-hidden="true">2</div>
-              <div class="step-image">
-                <img
-                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect width='100%25' height='100%25' fill='%23f3f4f6'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%239ca3af' font-family='sans-serif' font-size='14'%3ELoading...%3C/text%3E%3C/svg%3E"
-                  data-src="images/workflow/step2.webp"
-                  data-srcset="images/workflow/step2.webp 400w, images/workflow/step2-2x.webp 800w"
-                  sizes="(min-width: 768px) 400px, 100vw"
-                  alt="Add tasks and team members interface"
-                  width="400"
-                  height="300"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-              <h3>Add Tasks & Team</h3>
-              <p>
-                Invite team members and start adding tasks with smart
-                suggestions and auto-categorization.
-              </p>
-            </article>
-            <article class="workflow-step">
-              <div class="step-number" aria-hidden="true">3</div>
-              <div class="step-image">
-                <img
-                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect width='100%25' height='100%25' fill='%23f3f4f6'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%239ca3af' font-family='sans-serif' font-size='14'%3ELoading...%3C/text%3E%3C/svg%3E"
-                  data-src="images/workflow/step3.webp"
-                  data-srcset="images/workflow/step3.webp 400w, images/workflow/step3-2x.webp 800w"
-                  sizes="(min-width: 768px) 400px, 100vw"
-                  alt="Track progress and collaborate interface"
-                  width="400"
-                  height="300"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-              <h3>Track & Collaborate</h3>
-              <p>
-                Monitor progress in real-time and collaborate effortlessly with
-                your team members.
-              </p>
-            </article>
+            <div class="workflow-step">
+              <div class="step-number">1</div>
+              <h3>Create Tasks</h3>
+              <p>Add your tasks with descriptions, deadlines, and priorities.</p>
+            </div>
+            <div class="workflow-step">
+              <div class="step-number">2</div>
+              <h3>AI Optimization</h3>
+              <p>Our AI analyzes and organizes your tasks for maximum efficiency.</p>
+            </div>
+            <div class="workflow-step">
+              <div class="step-number">3</div>
+              <h3>Execute & Track</h3>
+              <p>Follow your optimized schedule and track progress in real-time.</p>
+            </div>
           </div>
         </div>
       </section>
 
       <!-- Testimonials Section -->
-      <section
-        id="testimonials"
-        class="testimonials"
-        aria-labelledby="testimonials-title"
-      >
+      <section class="testimonials" id="testimonials">
         <div class="container">
-          <h2 id="testimonials-title">What Our Customers Say</h2>
-          <p class="section-description">
-            Join thousands of teams who trust TaskFlow AI
-          </p>
+          <h2 class="section-title text-center">What Our Users Say</h2>
           <div class="testimonials-grid">
-            <article class="testimonial-card">
-              <div class="testimonial-avatar">
-                <img
-                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Crect width='100%25' height='100%25' fill='%23f3f4f6'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%239ca3af' font-family='sans-serif' font-size='14'%3ELoading...%3C/text%3E%3C/svg%3E"
-                  data-src="images/testimonials/avatar1.webp"
-                  data-srcset="images/testimonials/avatar1.webp 80w, images/testimonials/avatar1-2x.webp 160w"
-                  sizes="80px"
-                  alt="Sarah Johnson"
-                  width="80"
-                  height="80"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
+            <div class="testimonial-card">
               <blockquote>
                 <p>
-                  "TaskFlow AI has transformed how our team works. The AI
-                  automation saves us hours every week."
+                  This tool has completely transformed how our team manages projects. The
+                  AI prioritization is a game-changer!
                 </p>
               </blockquote>
               <footer>
@@ -355,111 +183,283 @@
                   <span>Product Manager, TechCorp</span>
                 </cite>
               </footer>
-            </article>
-            <article class="testimonial-card">
-              <div class="testimonial-avatar">
-                <img
-                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Crect width='100%25' height='100%25' fill='%23f3f4f6'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%239ca3af' font-family='sans-serif' font-size='14'%3ELoading...%3C/text%3E%3C/svg%3E"
-                  data-src="images/testimonials/avatar2.webp"
-                  data-srcset="images/testimonials/avatar2.webp 80w, images/testimonials/avatar2-2x.webp 160w"
-                  sizes="80px"
-                  alt="Michael Chen"
-                  width="80"
-                  height="80"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
+            </div>
+            <div class="testimonial-card">
               <blockquote>
                 <p>
-                  "The best task management tool we've used. Intuitive,
-                  powerful, and incredibly efficient."
+                  I've tried many task managers, but this is the first one that actually
+                  helps me stay organized without extra effort.
                 </p>
               </blockquote>
               <footer>
                 <cite>
                   <strong>Michael Chen</strong>
-                  <span>CEO, StartupHub</span>
+                  <span>Freelance Developer</span>
                 </cite>
               </footer>
-            </article>
-            <article class="testimonial-card">
-              <div class="testimonial-avatar">
-                <img
-                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Crect width='100%25' height='100%25' fill='%23f3f4f6'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%239ca3af' font-family='sans-serif' font-size='14'%3ELoading...%3C/text%3E%3C/svg%3E"
-                  data-src="images/testimonials/avatar3.webp"
-                  data-srcset="images/testimonials/avatar3.webp 80w, images/testimonials/avatar3-2x.webp 160w"
-                  sizes="80px"
-                  alt="Emily Rodriguez"
-                  width="80"
-                  height="80"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
+            </div>
+            <div class="testimonial-card">
               <blockquote>
                 <p>
-                  "Our productivity has increased by 40% since switching to
-                  TaskFlow AI. Highly recommended!"
+                  The analytics features give us incredible insights into our team's
+                  productivity. Highly recommended!
                 </p>
               </blockquote>
               <footer>
                 <cite>
                   <strong>Emily Rodriguez</strong>
-                  <span>Team Lead, DesignStudio</span>
+                  <span>Operations Director, StartupXYZ</span>
                 </cite>
               </footer>
-            </article>
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- CTA Section -->
-      <section class="cta" aria-labelledby="cta-title">
+      <!-- Pricing Section -->
+      <section class="pricing" id="pricing">
         <div class="container">
-          <h2 id="cta-title">Ready to Transform Your Workflow?</h2>
-          <p>Start your free 14-day trial today. No credit card required.</p>
-          <a href="#" class="btn btn-primary btn-lg">Get Started Free</a>
+          <h2 class="section-title text-center">Choose Your Plan</h2>
+          <p class="section-description text-center">
+            Flexible pricing for teams of all sizes
+          </p>
+          <div class="pricing-grid">
+            <div class="pricing-card">
+              <h3>Free</h3>
+              <div class="price">
+                <span class="amount">$0</span>
+                <span class="period">/month</span>
+              </div>
+              <ul class="features-list">
+                <li>Up to 10 tasks</li>
+                <li>Basic AI features</li>
+                <li>1 user</li>
+              </ul>
+              <a href="#contact" class="btn btn-outline">Get Started</a>
+            </div>
+            <div class="pricing-card pricing-card-featured">
+              <div class="pricing-badge">Most Popular</div>
+              <h3>Pro</h3>
+              <div class="price">
+                <span class="amount">$29</span>
+                <span class="period">/month</span>
+              </div>
+              <ul class="features-list">
+                <li>Unlimited tasks</li>
+                <li>Advanced AI features</li>
+                <li>Up to 10 users</li>
+                <li>Priority support</li>
+              </ul>
+              <a href="#contact" class="btn btn-primary">Get Started</a>
+            </div>
+            <div class="pricing-card">
+              <h3>Enterprise</h3>
+              <div class="price">
+                <span class="amount">Custom</span>
+              </div>
+              <ul class="features-list">
+                <li>Everything in Pro</li>
+                <li>Unlimited users</li>
+                <li>Custom integrations</li>
+                <li>Dedicated support</li>
+              </ul>
+              <a href="#contact" class="btn btn-outline">Contact Sales</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section class="contact" id="contact">
+        <div class="container">
+          <h2 class="section-title text-center">Get Started Today</h2>
+          <p class="section-description text-center">
+            Join thousands of teams already using AI Task Manager
+          </p>
+          <form class="contact-form" method="POST" action="/submit" novalidate>
+            <div class="form-group">
+              <label for="name" class="form-label">Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                class="form-input"
+                required
+                aria-required="true"
+                autocomplete="name"
+              />
+            </div>
+            <div class="form-group">
+              <label for="email" class="form-label">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="form-input"
+                required
+                aria-required="true"
+                autocomplete="email"
+              />
+            </div>
+            <div class="form-group">
+              <label for="message" class="form-label">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                class="form-textarea"
+                required
+                aria-required="true"
+              ></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </form>
         </div>
       </section>
     </main>
 
     <!-- Footer -->
-    <footer role="contentinfo">
+    <footer class="footer" role="contentinfo">
       <div class="container">
         <div class="footer-content">
+          <!-- Brand Section -->
           <div class="footer-brand">
-            <img
-              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Crect width='100%25' height='100%25' fill='%23f3f4f6'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%239ca3af' font-family='sans-serif' font-size='14'%3ELoading...%3C/text%3E%3C/svg%3E"
-              data-src="images/logo.svg"
-              alt="TaskFlow AI Logo"
-              width="40"
-              height="40"
-              loading="lazy"
-              decoding="async"
-            />
-            <span>TaskFlow AI</span>
+            <a href="#" class="footer-logo" aria-label="AI Task Manager home">
+              <i class="fas fa-tasks" aria-hidden="true"></i>
+              AI Task Manager
+            </a>
+            <p class="footer-description">
+              Transform your workflow with intelligent task management. Automate
+              prioritization, get insights, and boost productivity with AI-powered tools.
+            </p>
+            <div class="footer-social">
+              <div class="social-links">
+                <a
+                  href="https://twitter.com/aitaskmanager"
+                  class="social-link"
+                  aria-label="Follow us on Twitter"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+                <a
+                  href="https://linkedin.com/company/aitaskmanager"
+                  class="social-link"
+                  aria-label="Connect with us on LinkedIn"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                </a>
+                <a
+                  href="https://github.com/aitaskmanager"
+                  class="social-link"
+                  aria-label="View our GitHub repository"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fab fa-github" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
           </div>
-          <nav aria-label="Footer navigation">
-            <ul role="list">
-              <li><a href="#features">Features</a></li>
-              <li><a href="#pricing">Pricing</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#contact">Contact</a></li>
+
+          <!-- Product Section -->
+          <div class="footer-section">
+            <h3 class="footer-section-title">Product</h3>
+            <ul class="footer-links" role="list">
+              <li>
+                <a href="#features" class="footer-link">Features</a>
+              </li>
+              <li>
+                <a href="#workflow" class="footer-link">How It Works</a>
+              </li>
+              <li>
+                <a href="#pricing" class="footer-link">Pricing</a>
+              </li>
+              <li>
+                <a href="#testimonials" class="footer-link">Testimonials</a>
+              </li>
+              <li>
+                <a href="/integrations" class="footer-link">Integrations</a>
+              </li>
             </ul>
-          </nav>
+          </div>
+
+          <!-- Company Section -->
+          <div class="footer-section">
+            <h3 class="footer-section-title">Company</h3>
+            <ul class="footer-links" role="list">
+              <li>
+                <a href="/about" class="footer-link">About Us</a>
+              </li>
+              <li>
+                <a href="/careers" class="footer-link">Careers</a>
+              </li>
+              <li>
+                <a href="/blog" class="footer-link">Blog</a>
+              </li>
+              <li>
+                <a href="/press" class="footer-link">Press Kit</a>
+              </li>
+              <li>
+                <a href="/partners" class="footer-link">Partners</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Support Section -->
+          <div class="footer-section">
+            <h3 class="footer-section-title">Support</h3>
+            <ul class="footer-links" role="list">
+              <li>
+                <a href="/help" class="footer-link">Help Center</a>
+              </li>
+              <li>
+                <a href="/docs" class="footer-link">Documentation</a>
+              </li>
+              <li>
+                <a href="/api" class="footer-link">API Reference</a>
+              </li>
+              <li>
+                <a href="/status" class="footer-link">System Status</a>
+              </li>
+              <li>
+                <a href="#contact" class="footer-link">Contact Us</a>
+              </li>
+            </ul>
+            <div class="footer-contact">
+              <div class="contact-item">
+                <i class="fas fa-envelope" aria-hidden="true"></i>
+                <a href="mailto:support@aitaskmanager.com">support@aitaskmanager.com</a>
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-headset" aria-hidden="true"></i>
+                <span>24/7 Support Available</span>
+              </div>
+            </div>
+          </div>
         </div>
+
+        <!-- Footer Bottom -->
         <div class="footer-bottom">
-          <p>&copy; 2024 TaskFlow AI. All rights reserved.</p>
+          <p class="footer-copyright">
+            &copy; 2024 AI Task Manager. All rights reserved.
+          </p>
+          <nav class="footer-legal" aria-label="Legal navigation">
+            <a href="/privacy" class="footer-legal-link">Privacy Policy</a>
+            <a href="/terms" class="footer-legal-link">Terms of Service</a>
+            <a href="/cookies" class="footer-legal-link">Cookie Policy</a>
+            <a href="/security" class="footer-legal-link">Security</a>
+          </nav>
         </div>
       </div>
     </footer>
 
     <!-- Scripts -->
-    <script type="module" src="js/lazy-loading.js"></script>
-    <script src="js/navigation.js" defer></script>
-    <script src="js/animations.js" defer></script>
-    <script src="js/forms.js" defer></script>
     <script src="js/main.js" defer></script>
+    <script src="js/navigation.js" defer></script>
+    <script src="js/forms.js" defer></script>
+    <script src="js/animations.js" defer></script>
   </body>
 </html>

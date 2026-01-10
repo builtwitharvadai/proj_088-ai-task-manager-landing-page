@@ -1,14 +1,12 @@
-/* Main CSS - Design System Foundation */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+/* ============================================
+   AI Task Manager - Main Stylesheet
+   Comprehensive styling with design system integration
+   ============================================ */
 
-/* Import section styles */
-@import './sections/hero.css';
-@import './sections/features.css';
-@import './sections/workflow.css';
-@import './sections/testimonials.css';
-@import './sections/pricing.css';
+/* ============================================
+   CSS Reset and Base Styles
+   ============================================ */
 
-/* CSS Reset and Base Styles */
 *,
 *::before,
 *::after {
@@ -17,27 +15,69 @@
   padding: 0;
 }
 
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  font-family: var(--font-family-base, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif);
+  font-size: var(--font-size-base, 1rem);
+  line-height: var(--line-height-normal, 1.5);
+  color: var(--color-text-primary, #1a1a2e);
+  background-color: var(--color-background, #ffffff);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ============================================
+   Design System Variables
+   ============================================ */
+
 :root {
-  /* Color System */
-  --color-primary: #6366f1;
-  --color-primary-dark: #4f46e5;
-  --color-primary-light: #818cf8;
-  --color-secondary: #8b5cf6;
-  --color-accent: #ec4899;
+  /* Color Palette */
+  --color-primary-50: #f0f7ff;
+  --color-primary-100: #dbeafe;
+  --color-primary-200: #bfdbfe;
+  --color-primary-300: #93c5fd;
+  --color-primary-400: #60a5fa;
+  --color-primary-500: #3b82f6;
+  --color-primary-600: #2563eb;
+  --color-primary-700: #1d4ed8;
+  --color-primary-800: #1e40af;
+  --color-primary-900: #1e3a8a;
   
-  --color-text-primary: #1f2937;
-  --color-text-secondary: #6b7280;
-  --color-text-light: #9ca3af;
+  --color-secondary-500: #8b5cf6;
+  --color-accent-purple: #9333ea;
   
+  --color-text-primary: #1a1a2e;
+  --color-text-secondary: #4a5568;
+  --color-text-light: #718096;
+  
+  --color-background: #ffffff;
   --color-bg-primary: #ffffff;
-  --color-bg-secondary: #f9fafb;
-  --color-bg-tertiary: #f3f4f6;
+  --color-bg-secondary: #f7fafc;
+  --color-bg-tertiary: #edf2f7;
+  --color-surface: #ffffff;
   
-  --color-border: #e5e7eb;
-  --color-border-light: #f3f4f6;
+  --color-border: #e2e8f0;
+  --color-border-light: #cbd5e0;
+  
+  --color-primary: var(--color-primary-600);
+  --color-primary-dark: var(--color-primary-700);
+  --color-primary-light: var(--color-primary-400);
   
   /* Typography */
-  --font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-family-heading: var(--font-family-base);
   
   --font-size-xs: 0.75rem;
   --font-size-sm: 0.875rem;
@@ -54,9 +94,13 @@
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
   
-  --line-height-tight: 1.25;
+  --line-height-tight: 1.2;
   --line-height-normal: 1.5;
   --line-height-relaxed: 1.75;
+  
+  --letter-spacing-tight: -0.025em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.025em;
   
   /* Spacing */
   --space-xs: 0.25rem;
@@ -67,13 +111,14 @@
   --space-2xl: 3rem;
   --space-3xl: 4rem;
   --space-4xl: 6rem;
+  --space-5xl: 8rem;
   
   /* Layout */
-  --container-max-width: 1280px;
-  --container-padding: var(--space-lg);
+  --container-max-width: 1200px;
+  --container-padding: 1rem;
   
   /* Border Radius */
-  --radius-sm: 0.375rem;
+  --radius-sm: 0.25rem;
   --radius-md: 0.5rem;
   --radius-lg: 0.75rem;
   --radius-xl: 1rem;
@@ -81,96 +126,108 @@
   
   /* Shadows */
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
   
   /* Transitions */
   --transition-fast: 150ms ease;
-  --transition-base: 200ms ease;
-  --transition-slow: 300ms ease;
+  --transition-base: 300ms ease;
+  --transition-slow: 500ms ease;
   
-  /* Z-index */
-  --z-dropdown: 1000;
-  --z-sticky: 1020;
-  --z-fixed: 1030;
-  --z-modal-backdrop: 1040;
-  --z-modal: 1050;
-  --z-popover: 1060;
-  --z-tooltip: 1070;
+  /* Z-Index */
+  --z-index-dropdown: 1000;
+  --z-index-sticky: 1020;
+  --z-index-fixed: 1030;
+  --z-index-modal-backdrop: 1040;
+  --z-index-modal: 1050;
+  --z-index-popover: 1060;
+  --z-index-tooltip: 1070;
 }
 
-/* Base Styles */
-html {
-  font-size: 16px;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+/* ============================================
+   Dark Mode Support
+   ============================================ */
 
-body {
-  font-family: var(--font-family-base);
-  font-size: var(--font-size-base);
-  line-height: var(--line-height-normal);
-  color: var(--color-text-primary);
-  background-color: var(--color-bg-primary);
-}
-
-/* Container */
-.container {
-  width: 100%;
-  max-width: var(--container-max-width);
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: var(--container-padding);
-  padding-right: var(--container-padding);
-}
-
-/* Section Spacing */
-section {
-  padding-top: var(--space-4xl);
-  padding-bottom: var(--space-4xl);
-}
-
-@media (max-width: 768px) {
-  section {
-    padding-top: var(--space-3xl);
-    padding-bottom: var(--space-3xl);
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-text-primary: #f7fafc;
+    --color-text-secondary: #cbd5e0;
+    --color-text-light: #a0aec0;
+    
+    --color-background: #1a1a2e;
+    --color-bg-primary: #1a1a2e;
+    --color-bg-secondary: #16213e;
+    --color-bg-tertiary: #0f172a;
+    --color-surface: #1e293b;
+    
+    --color-border: #334155;
+    --color-border-light: #475569;
   }
 }
 
-/* Typography */
+/* ============================================
+   Container and Layout Utilities
+   ============================================ */
+
+.container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin-inline: auto;
+  padding-inline: var(--container-padding);
+}
+
+@media (min-width: 640px) {
+  .container {
+    --container-padding: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    --container-padding: 2rem;
+  }
+}
+
+/* ============================================
+   Typography Utilities
+   ============================================ */
+
 h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-heading);
   font-weight: var(--font-weight-bold);
   line-height: var(--line-height-tight);
   color: var(--color-text-primary);
+  margin-bottom: var(--space-md);
 }
 
 h1 {
-  font-size: var(--font-size-5xl);
-}
-
-h2 {
   font-size: var(--font-size-4xl);
 }
 
-h3 {
+h2 {
   font-size: var(--font-size-3xl);
 }
 
-h4 {
+h3 {
   font-size: var(--font-size-2xl);
 }
 
-h5 {
+h4 {
   font-size: var(--font-size-xl);
 }
 
-h6 {
+h5 {
   font-size: var(--font-size-lg);
+}
+
+h6 {
+  font-size: var(--font-size-base);
 }
 
 p {
   margin-bottom: var(--space-md);
+  line-height: var(--line-height-relaxed);
 }
 
 a {
@@ -181,95 +238,111 @@ a {
 
 a:hover {
   color: var(--color-primary-dark);
+  text-decoration: underline;
 }
 
-/* Buttons */
+a:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* ============================================
+   Button Components
+   ============================================ */
+
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: var(--space-sm);
   padding: var(--space-md) var(--space-xl);
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-semibold);
   line-height: 1;
+  text-decoration: none;
   border: none;
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-md);
   cursor: pointer;
   transition: all var(--transition-base);
-  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
 }
 
 .btn-primary {
-  background-color: var(--color-primary);
   color: white;
+  background-color: var(--color-primary);
+  box-shadow: var(--shadow-md);
 }
 
 .btn-primary:hover {
   background-color: var(--color-primary-dark);
-  transform: translateY(-2px);
   box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-sm);
 }
 
 .btn-secondary {
-  background-color: transparent;
   color: var(--color-primary);
+  background-color: transparent;
   border: 2px solid var(--color-primary);
 }
 
 .btn-secondary:hover {
-  background-color: var(--color-primary);
-  color: white;
+  background-color: var(--color-primary-50);
+  text-decoration: none;
 }
 
-/* Utility Classes */
-.text-center {
-  text-align: center;
+/* ============================================
+   Section Imports
+   ============================================ */
+
+@import 'sections/hero.css';
+@import 'sections/features.css';
+@import 'sections/workflow.css';
+@import 'sections/testimonials.css';
+@import 'sections/footer.css';
+
+/* ============================================
+   Component Imports
+   ============================================ */
+
+@import 'components.css';
+@import 'performance.css';
+
+/* ============================================
+   Accessibility Enhancements
+   ============================================ */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }
 
-.text-primary {
-  color: var(--color-primary);
-}
-
-.text-secondary {
-  color: var(--color-text-secondary);
-}
-
-.mb-sm {
-  margin-bottom: var(--space-sm);
-}
-
-.mb-md {
-  margin-bottom: var(--space-md);
-}
-
-.mb-lg {
-  margin-bottom: var(--space-lg);
-}
-
-.mb-xl {
-  margin-bottom: var(--space-xl);
-}
-
-/* Responsive Typography */
-@media (max-width: 768px) {
-  h1 {
-    font-size: var(--font-size-4xl);
-  }
-  
-  h2 {
-    font-size: var(--font-size-3xl);
-  }
-  
-  h3 {
-    font-size: var(--font-size-2xl);
-  }
-}
-
-/* Accessibility */
 :focus-visible {
   outline: 2px solid var(--color-primary);
   outline-offset: 2px;
 }
+
+/* ============================================
+   Reduced Motion Support
+   ============================================ */
 
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -278,5 +351,119 @@ a:hover {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ============================================
+   High Contrast Mode Support
+   ============================================ */
+
+@media (prefers-contrast: high) {
+  :root {
+    --color-primary: #0000ff;
+    --color-border: #000000;
+  }
+  
+  .btn {
+    border-width: 2px;
+  }
+}
+
+/* ============================================
+   Print Styles
+   ============================================ */
+
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+  
+  .btn,
+  nav,
+  footer {
+    display: none;
+  }
+  
+  a[href^="http"]:after {
+    content: " (" attr(href) ")";
+  }
+  
+  h1, h2, h3 {
+    page-break-after: avoid;
+  }
+  
+  img {
+    max-width: 100%;
+    page-break-inside: avoid;
+  }
+}
+
+/* ============================================
+   Utility Classes
+   ============================================ */
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.mt-0 { margin-top: 0; }
+.mt-1 { margin-top: var(--space-xs); }
+.mt-2 { margin-top: var(--space-sm); }
+.mt-3 { margin-top: var(--space-md); }
+.mt-4 { margin-top: var(--space-lg); }
+.mt-5 { margin-top: var(--space-xl); }
+
+.mb-0 { margin-bottom: 0; }
+.mb-1 { margin-bottom: var(--space-xs); }
+.mb-2 { margin-bottom: var(--space-sm); }
+.mb-3 { margin-bottom: var(--space-md); }
+.mb-4 { margin-bottom: var(--space-lg); }
+.mb-5 { margin-bottom: var(--space-xl); }
+
+.d-none {
+  display: none;
+}
+
+.d-block {
+  display: block;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.d-grid {
+  display: grid;
+}
+
+/* ============================================
+   Responsive Utilities
+   ============================================ */
+
+@media (max-width: 767px) {
+  .hide-mobile {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .hide-tablet {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hide-desktop {
+    display: none;
   }
 }
