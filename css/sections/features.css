@@ -1,0 +1,462 @@
+/* ============================================
+   AI Task Manager - Features Section Styles
+   CSS Grid Layout with Responsive Design
+   ============================================ */
+
+/* ============================================
+   Features Section Container
+   ============================================ */
+
+.features-section {
+  padding-block: var(--space-3xl, 4rem);
+  background: linear-gradient(
+    180deg,
+    var(--color-background, #ffffff) 0%,
+    var(--color-primary-50, #f0f7ff) 100%
+  );
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle background pattern */
+.features-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(
+    circle at 20% 50%,
+    rgba(59, 130, 246, 0.05) 0%,
+    transparent 50%
+  );
+  pointer-events: none;
+}
+
+.features-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* ============================================
+   Section Header
+   ============================================ */
+
+.features-header {
+  text-align: center;
+  margin-block-end: var(--space-3xl, 4rem);
+  max-width: 800px;
+  margin-inline: auto;
+}
+
+.features-header h2 {
+  font-size: clamp(2rem, 4vw + 1rem, 3rem);
+  font-weight: var(--font-weight-bold, 700);
+  color: var(--color-text-primary, #1a1a2e);
+  margin-block-end: var(--space-md, 1rem);
+  line-height: var(--line-height-tight, 1.2);
+}
+
+.features-header p {
+  font-size: clamp(1rem, 2vw + 0.5rem, 1.25rem);
+  color: var(--color-text-secondary, #4a5568);
+  line-height: var(--line-height-relaxed, 1.75);
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+/* ============================================
+   Features Grid Layout
+   ============================================ */
+
+.features-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl, 2rem);
+  margin-block-start: var(--space-2xl, 3rem);
+}
+
+/* Tablet: 2 columns */
+@media (min-width: 768px) {
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-2xl, 3rem);
+  }
+}
+
+/* Desktop: 3 columns */
+@media (min-width: 1024px) {
+  .features-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-2xl, 3rem);
+  }
+}
+
+/* ============================================
+   Feature Card Styles
+   ============================================ */
+
+.feature-card {
+  background-color: var(--color-surface, #ffffff);
+  border: 1px solid var(--color-border, #e2e8f0);
+  border-radius: var(--radius-xl, 16px);
+  padding: var(--space-2xl, 3rem);
+  text-align: center;
+  transition: all var(--transition-base, 0.3s ease);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Gradient overlay on hover */
+.feature-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(59, 130, 246, 0.05) 0%,
+    rgba(147, 51, 234, 0.05) 100%
+  );
+  opacity: 0;
+  transition: opacity var(--transition-base, 0.3s ease);
+  z-index: -1;
+}
+
+.feature-card:hover {
+  border-color: var(--color-primary-300, #93c5fd);
+  box-shadow: var(--shadow-xl, 0 20px 25px -5px rgba(0, 0, 0, 0.1));
+  transform: translateY(-8px);
+}
+
+.feature-card:hover::before {
+  opacity: 1;
+}
+
+/* Focus state for accessibility */
+.feature-card:focus-within {
+  outline: 2px solid var(--color-primary-500, #3b82f6);
+  outline-offset: 2px;
+}
+
+/* ============================================
+   Feature Icon Styles
+   ============================================ */
+
+.feature-icon {
+  width: 80px;
+  height: 80px;
+  margin-block-end: var(--space-lg, 1.5rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    135deg,
+    var(--color-primary-100, #dbeafe) 0%,
+    rgba(147, 51, 234, 0.1) 100%
+  );
+  border-radius: var(--radius-xl, 16px);
+  color: var(--color-primary-700, #1d4ed8);
+  font-size: 2.5rem;
+  transition: transform var(--transition-base, 0.3s ease);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Icon glow effect */
+.feature-icon::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(59, 130, 246, 0.2) 0%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity var(--transition-base, 0.3s ease);
+}
+
+.feature-card:hover .feature-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.feature-card:hover .feature-icon::after {
+  opacity: 1;
+}
+
+/* Font Awesome icon sizing */
+.feature-icon i,
+.feature-icon .fa,
+.feature-icon .fas,
+.feature-icon .far,
+.feature-icon .fab {
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
+/* Material Icons sizing */
+.feature-icon .material-icons,
+.feature-icon .material-icons-outlined {
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
+/* SVG icon sizing */
+.feature-icon svg {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+/* ============================================
+   Feature Content Styles
+   ============================================ */
+
+.feature-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.feature-card h3 {
+  font-size: clamp(1.25rem, 2vw + 0.5rem, 1.5rem);
+  font-weight: var(--font-weight-semibold, 600);
+  color: var(--color-text-primary, #1a1a2e);
+  margin-block-end: var(--space-md, 1rem);
+  line-height: var(--line-height-tight, 1.2);
+}
+
+.feature-card p {
+  font-size: clamp(0.875rem, 1.5vw + 0.25rem, 1rem);
+  color: var(--color-text-secondary, #4a5568);
+  line-height: var(--line-height-relaxed, 1.75);
+  margin-block-end: 0;
+}
+
+/* ============================================
+   Feature Card Variants
+   ============================================ */
+
+/* Primary feature (first card) */
+.feature-card:nth-child(1) .feature-icon {
+  background: linear-gradient(
+    135deg,
+    rgba(59, 130, 246, 0.15) 0%,
+    rgba(37, 99, 235, 0.1) 100%
+  );
+  color: var(--color-primary-600, #2563eb);
+}
+
+/* Secondary feature (second card) */
+.feature-card:nth-child(2) .feature-icon {
+  background: linear-gradient(
+    135deg,
+    rgba(147, 51, 234, 0.15) 0%,
+    rgba(126, 34, 206, 0.1) 100%
+  );
+  color: var(--color-accent-purple, #9333ea);
+}
+
+/* Tertiary feature (third card) */
+.feature-card:nth-child(3) .feature-icon {
+  background: linear-gradient(
+    135deg,
+    rgba(16, 185, 129, 0.15) 0%,
+    rgba(5, 150, 105, 0.1) 100%
+  );
+  color: #059669;
+}
+
+/* ============================================
+   Responsive Design Adjustments
+   ============================================ */
+
+/* Mobile: Enhanced spacing */
+@media (max-width: 767px) {
+  .features-section {
+    padding-block: var(--space-2xl, 3rem);
+  }
+
+  .features-header {
+    margin-block-end: var(--space-2xl, 3rem);
+  }
+
+  .feature-card {
+    padding: var(--space-xl, 2rem);
+  }
+
+  .feature-icon {
+    width: 64px;
+    height: 64px;
+    font-size: 2rem;
+  }
+
+  .feature-icon i,
+  .feature-icon .fa,
+  .feature-icon .fas,
+  .feature-icon .far,
+  .feature-icon .fab,
+  .feature-icon .material-icons,
+  .feature-icon .material-icons-outlined {
+    font-size: 2rem;
+  }
+
+  .feature-icon svg {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
+/* Tablet: Optimized layout */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Center third card on tablet */
+  .feature-card:nth-child(3) {
+    grid-column: 1 / -1;
+    max-width: 500px;
+    margin-inline: auto;
+  }
+}
+
+/* Desktop: Enhanced spacing */
+@media (min-width: 1024px) {
+  .features-section {
+    padding-block: var(--space-4xl, 6rem);
+  }
+
+  .feature-card {
+    padding: var(--space-3xl, 4rem);
+  }
+}
+
+/* Large desktop: Max width constraint */
+@media (min-width: 1280px) {
+  .features-grid {
+    max-width: 1200px;
+    margin-inline: auto;
+  }
+}
+
+/* ============================================
+   Accessibility Enhancements
+   ============================================ */
+
+/* Screen reader only text for icons */
+.feature-icon .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .feature-card {
+    border-width: 2px;
+  }
+
+  .feature-card:hover {
+    border-width: 3px;
+  }
+
+  .feature-icon {
+    border: 2px solid currentColor;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .feature-card,
+  .feature-icon,
+  .feature-card::before,
+  .feature-icon::after {
+    transition: none !important;
+  }
+
+  .feature-card:hover {
+    transform: none;
+  }
+
+  .feature-card:hover .feature-icon {
+    transform: none;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .features-section {
+    background: linear-gradient(
+      180deg,
+      #1a1a2e 0%,
+      #16213e 100%
+    );
+  }
+
+  .feature-card {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .feature-card:hover {
+    border-color: rgba(59, 130, 246, 0.5);
+    background-color: rgba(255, 255, 255, 0.08);
+  }
+
+  .feature-icon {
+    background: linear-gradient(
+      135deg,
+      rgba(59, 130, 246, 0.2) 0%,
+      rgba(147, 51, 234, 0.15) 100%
+    );
+    color: #93c5fd;
+  }
+
+  .feature-card h3 {
+    color: #f7fafc;
+  }
+
+  .feature-card p {
+    color: #cbd5e0;
+  }
+}
+
+/* ============================================
+   Print Styles
+   ============================================ */
+
+@media print {
+  .features-section {
+    background: white !important;
+    padding-block: 2rem;
+  }
+
+  .feature-card {
+    border: 1px solid #000 !important;
+    box-shadow: none !important;
+    page-break-inside: avoid;
+    transform: none !important;
+  }
+
+  .feature-icon {
+    background: #f0f0f0 !important;
+    color: #000 !important;
+  }
+}
+
+/* ============================================
+   Feature Flag Kill Switch
+   ============================================ */
+
+.features-section[data-feature-flag='off'] {
+  display: none;
+}
