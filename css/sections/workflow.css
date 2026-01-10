@@ -1,0 +1,449 @@
+/* ============================================
+   AI Task Manager - Workflow Section Styles
+   Three-Step Visual Workflow with Timeline Design
+   ============================================ */
+
+/* ============================================
+   Workflow Section Container
+   ============================================ */
+
+.workflow-section {
+  position: relative;
+  padding-block: var(--space-3xl);
+  background: linear-gradient(
+    180deg,
+    var(--color-background) 0%,
+    var(--color-primary-50) 100%
+  );
+  overflow: hidden;
+  isolation: isolate;
+}
+
+@media (prefers-color-scheme: dark) {
+  .workflow-section {
+    background: linear-gradient(
+      180deg,
+      var(--color-background) 0%,
+      rgba(59, 130, 246, 0.05) 100%
+    );
+  }
+}
+
+.workflow-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 50% 0%,
+    rgba(59, 130, 246, 0.1) 0%,
+    transparent 50%
+  );
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* ============================================
+   Workflow Container
+   ============================================ */
+
+.workflow-container {
+  max-width: var(--container-max-width, 1200px);
+  margin-inline: auto;
+  padding-inline: var(--container-padding, 1rem);
+}
+
+/* ============================================
+   Workflow Header
+   ============================================ */
+
+.workflow-header {
+  text-align: center;
+  margin-block-end: var(--space-3xl);
+}
+
+.workflow-header h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin-block-end: var(--space-md);
+  line-height: var(--line-height-tight);
+}
+
+.workflow-header p {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: var(--color-text-secondary);
+  max-width: 60ch;
+  margin-inline: auto;
+  line-height: var(--line-height-relaxed);
+}
+
+/* ============================================
+   Workflow Steps Container
+   ============================================ */
+
+.workflow-steps {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-2xl);
+  position: relative;
+  counter-reset: workflow-step;
+}
+
+/* Mobile: Vertical Timeline */
+@media (max-width: 767px) {
+  .workflow-steps::before {
+    content: '';
+    position: absolute;
+    left: 31px;
+    top: 80px;
+    bottom: 80px;
+    width: 2px;
+    background: linear-gradient(
+      180deg,
+      var(--color-primary-300) 0%,
+      var(--color-accent-purple) 100%
+    );
+    z-index: 0;
+  }
+}
+
+/* Tablet and Desktop: Horizontal Layout */
+@media (min-width: 768px) {
+  .workflow-steps {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-xl);
+  }
+
+  .workflow-steps::before {
+    content: '';
+    position: absolute;
+    left: 10%;
+    right: 10%;
+    top: 31px;
+    height: 2px;
+    background: linear-gradient(
+      90deg,
+      var(--color-primary-300) 0%,
+      var(--color-accent-purple) 50%,
+      var(--color-primary-300) 100%
+    );
+    z-index: 0;
+  }
+}
+
+/* ============================================
+   Workflow Step Card
+   ============================================ */
+
+.workflow-step {
+  position: relative;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-2xl);
+  transition: all var(--transition-base);
+  z-index: 1;
+  counter-increment: workflow-step;
+}
+
+.workflow-step:hover {
+  border-color: var(--color-primary-300);
+  box-shadow: var(--shadow-xl);
+  transform: translateY(-8px);
+}
+
+@media (max-width: 767px) {
+  .workflow-step {
+    padding-inline-start: calc(var(--space-2xl) + 48px);
+  }
+}
+
+/* ============================================
+   Step Number Indicator
+   ============================================ */
+
+.workflow-step-number {
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    135deg,
+    var(--color-primary-600) 0%,
+    var(--color-accent-purple) 100%
+  );
+  color: white;
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-lg);
+  transition: all var(--transition-base);
+  z-index: 2;
+}
+
+.workflow-step-number::before {
+  content: counter(workflow-step);
+}
+
+.workflow-step:hover .workflow-step-number {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: var(--shadow-xl);
+}
+
+/* Mobile: Number on Left Side */
+@media (max-width: 767px) {
+  .workflow-step-number {
+    left: -16px;
+    top: var(--space-xl);
+  }
+}
+
+/* Tablet and Desktop: Number on Top Center */
+@media (min-width: 768px) {
+  .workflow-step-number {
+    left: 50%;
+    top: -32px;
+    transform: translateX(-50%);
+  }
+
+  .workflow-step:hover .workflow-step-number {
+    transform: translateX(-50%) scale(1.1) rotate(5deg);
+  }
+}
+
+/* ============================================
+   Step Icon Container
+   ============================================ */
+
+.workflow-step-icon {
+  width: 56px;
+  height: 56px;
+  margin-block-end: var(--space-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    135deg,
+    var(--color-primary-100) 0%,
+    rgba(147, 51, 234, 0.1) 100%
+  );
+  border-radius: var(--radius-lg);
+  color: var(--color-primary-700);
+  transition: all var(--transition-base);
+}
+
+.workflow-step:hover .workflow-step-icon {
+  transform: scale(1.05);
+  background: linear-gradient(
+    135deg,
+    var(--color-primary-200) 0%,
+    rgba(147, 51, 234, 0.2) 100%
+  );
+}
+
+.workflow-step-icon svg,
+.workflow-step-icon img {
+  width: 32px;
+  height: 32px;
+}
+
+@media (min-width: 768px) {
+  .workflow-step-icon {
+    margin-block-start: var(--space-xl);
+  }
+}
+
+/* ============================================
+   Step Content
+   ============================================ */
+
+.workflow-step-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.workflow-step-title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  line-height: var(--line-height-tight);
+  margin: 0;
+}
+
+.workflow-step-description {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
+  margin: 0;
+}
+
+/* ============================================
+   Step Arrow Indicators (Desktop Only)
+   ============================================ */
+
+@media (min-width: 768px) {
+  .workflow-step:not(:last-child)::after {
+    content: '→';
+    position: absolute;
+    right: -32px;
+    top: 16px;
+    font-size: var(--font-size-2xl);
+    color: var(--color-primary-400);
+    z-index: 2;
+    transition: all var(--transition-base);
+  }
+
+  .workflow-step:hover::after {
+    transform: translateX(4px);
+    color: var(--color-primary-600);
+  }
+}
+
+/* ============================================
+   Animations
+   ============================================ */
+
+@keyframes workflow-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.workflow-step {
+  animation: workflow-fade-in 0.6s ease-out backwards;
+}
+
+.workflow-step:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.workflow-step:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.workflow-step:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+/* ============================================
+   Accessibility Enhancements
+   ============================================ */
+
+.workflow-step:focus-within {
+  outline: 2px solid var(--color-primary-500);
+  outline-offset: 4px;
+}
+
+.workflow-step-number {
+  user-select: none;
+}
+
+/* ============================================
+   Reduced Motion Support
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .workflow-step,
+  .workflow-step-number,
+  .workflow-step-icon,
+  .workflow-step::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .workflow-step:hover {
+    transform: none;
+  }
+
+  .workflow-step:hover .workflow-step-number {
+    transform: translateX(-50%);
+  }
+
+  @media (max-width: 767px) {
+    .workflow-step:hover .workflow-step-number {
+      transform: none;
+    }
+  }
+
+  .workflow-step:hover .workflow-step-icon {
+    transform: none;
+  }
+
+  .workflow-step:hover::after {
+    transform: none;
+  }
+}
+
+/* ============================================
+   High Contrast Mode Support
+   ============================================ */
+
+@media (prefers-contrast: high) {
+  .workflow-step {
+    border-width: 2px;
+  }
+
+  .workflow-step-number {
+    border: 2px solid white;
+  }
+
+  .workflow-steps::before {
+    height: 3px;
+  }
+
+  @media (max-width: 767px) {
+    .workflow-steps::before {
+      width: 3px;
+    }
+  }
+}
+
+/* ============================================
+   Print Styles
+   ============================================ */
+
+@media print {
+  .workflow-section {
+    background: white !important;
+    padding-block: 2rem;
+  }
+
+  .workflow-section::before {
+    display: none;
+  }
+
+  .workflow-steps {
+    gap: 1.5rem;
+  }
+
+  .workflow-step {
+    page-break-inside: avoid;
+    box-shadow: none !important;
+    border: 1px solid #ccc !important;
+  }
+
+  .workflow-step:hover {
+    transform: none;
+  }
+
+  .workflow-step-number {
+    background: #333 !important;
+    box-shadow: none !important;
+  }
+}
+
+/* ============================================
+   Feature Flag Kill Switch
+   ============================================ */
+
+.workflow-section[data-feature-disabled='true'] {
+  display: none;
+}
