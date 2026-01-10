@@ -1,14 +1,10 @@
 /**
  * Main JavaScript Entry Point
- * 
- * Initializes all interactive features including navigation, animations,
- * and form validation. Handles page load events with proper error handling
- * and performance optimization.
+ * Initializes all modules and coordinates application startup
  * 
  * @module main
- * @generated-from: task-id:TASK-008
- * @modifies: N/A (new file)
- * @dependencies: ["js/navigation.js", "js/animations.js", "js/forms.js"]
+ * @generated-from: TASK-009
+ * @modifies: N/A (initialization only)
  */
 
 /**
@@ -16,403 +12,315 @@
  */
 const appState = {
   initialized: false,
-  modules: {
-    navigation: false,
-    animations: false,
-    forms: false,
-  },
+  modules: new Map(),
   errors: [],
 };
 
 /**
- * Configuration constants
+ * Module initialization configuration
  */
-const CONFIG = Object.freeze({
-  INIT_TIMEOUT: 5000, // Maximum time for initialization
-  RETRY_DELAY: 1000, // Delay before retry on error
-  MAX_RETRIES: 3, // Maximum initialization retries
-  DEBUG: false, // Enable debug logging
-});
+const MODULE_CONFIG = {
+  lazyLoading: {
+    enabled: true,
+    priority: 1,
+    config: {
+      rootMargin: '50px',
+      threshold: 0.01,
+      enableFadeIn: true,
+      fadeInDuration: 300,
+    },
+  },
+  navigation: {
+    enabled: true,
+    priority: 2,
+  },
+  animations: {
+    enabled: true,
+    priority: 3,
+  },
+  forms: {
+    enabled: true,
+    priority: 4,
+  },
+};
 
 /**
- * Logger utility with structured logging
+ * Performance monitoring configuration
  */
-const logger = {
-  /**
-   * Log info message
-   * @param {string} message - Log message
-   * @param {Object} context - Additional context
-   */
-  info(message, context = {}) {
-    if (CONFIG.DEBUG) {
-      console.info('[Main]', message, context);
+const PERFORMANCE_CONFIG = {
+  enabled: true,
+  metrics: {
+    lcp: { target: 2500, warning: 2000 },
+    fid: { target: 100, warning: 50 },
+    cls: { target: 0.1, warning: 0.05 },
+  },
+};
+
+/**
+ * Initialize lazy loading module
+ * @returns {Promise<void>}
+ */
+async function initLazyLoading() {
+  try {
+    if (!MODULE_CONFIG.lazyLoading.enabled) {
+      console.info('[Main] Lazy loading disabled');
+      return;
     }
-  },
 
-  /**
-   * Log warning message
-   * @param {string} message - Warning message
-   * @param {Object} context - Additional context
-   */
-  warn(message, context = {}) {
-    console.warn('[Main]', message, context);
-  },
+    if (typeof window.lazyLoader !== 'undefined') {
+      console.info('[Main] Lazy loading already initialized');
+      appState.modules.set('lazyLoading', window.lazyLoader);
+      return;
+    }
 
-  /**
-   * Log error message
-   * @param {string} message - Error message
-   * @param {Error} error - Error object
-   * @param {Object} context - Additional context
-   */
-  error(message, error, context = {}) {
-    console.error('[Main]', message, {
-      error: error.message,
-      stack: error.stack,
-      ...context,
-    });
-    
-    // Track error in state
+    console.error('[Main] Lazy loading module not found');
     appState.errors.push({
-      message,
-      error: error.message,
-      timestamp: new Date().toISOString(),
-      context,
+      module: 'lazyLoading',
+      error: 'Module not loaded',
+      timestamp: Date.now(),
     });
-  },
-};
-
-/**
- * Performance monitoring utility
- */
-const performance = {
-  marks: new Map(),
-
-  /**
-   * Start performance measurement
-   * @param {string} name - Measurement name
-   */
-  start(name) {
-    this.marks.set(name, Date.now());
-  },
-
-  /**
-   * End performance measurement and log duration
-   * @param {string} name - Measurement name
-   */
-  end(name) {
-    const startTime = this.marks.get(name);
-    if (startTime) {
-      const duration = Date.now() - startTime;
-      logger.info(`Performance: ${name}`, { duration: `${duration}ms` });
-      this.marks.delete(name);
-    }
-  },
-};
+  } catch (error) {
+    console.error('[Main] Failed to initialize lazy loading:', error);
+    appState.errors.push({
+      module: 'lazyLoading',
+      error: error.message,
+      timestamp: Date.now(),
+    });
+  }
+}
 
 /**
  * Initialize navigation module
- * @returns {Promise<boolean>} Success status
+ * @returns {Promise<void>}
  */
-async function initializeNavigation() {
+async function initNavigation() {
   try {
-    performance.start('navigation-init');
-    
-    // Navigation module auto-initializes, just verify it's loaded
-    if (typeof window.initNavigation === 'function') {
-      // Already initialized by navigation.js
-      logger.info('Navigation module loaded');
-    } else {
-      logger.warn('Navigation module not found, features may be limited');
+    if (!MODULE_CONFIG.navigation.enabled) {
+      console.info('[Main] Navigation disabled');
+      return;
     }
-    
-    appState.modules.navigation = true;
-    performance.end('navigation-init');
-    return true;
+
+    console.info('[Main] Navigation initialized');
+    appState.modules.set('navigation', true);
   } catch (error) {
-    logger.error('Navigation initialization failed', error);
-    appState.modules.navigation = false;
-    return false;
+    console.error('[Main] Failed to initialize navigation:', error);
+    appState.errors.push({
+      module: 'navigation',
+      error: error.message,
+      timestamp: Date.now(),
+    });
   }
 }
 
 /**
  * Initialize animations module
- * @returns {Promise<boolean>} Success status
+ * @returns {Promise<void>}
  */
-async function initializeAnimations() {
+async function initAnimations() {
   try {
-    performance.start('animations-init');
-    
-    // Animations module auto-initializes, just verify it's loaded
-    if (typeof window.AnimationManager !== 'undefined') {
-      logger.info('Animations module loaded');
-    } else {
-      logger.warn('Animations module not found, scroll animations disabled');
+    if (!MODULE_CONFIG.animations.enabled) {
+      console.info('[Main] Animations disabled');
+      return;
     }
-    
-    appState.modules.animations = true;
-    performance.end('animations-init');
-    return true;
+
+    console.info('[Main] Animations initialized');
+    appState.modules.set('animations', true);
   } catch (error) {
-    logger.error('Animations initialization failed', error);
-    appState.modules.animations = false;
-    return false;
+    console.error('[Main] Failed to initialize animations:', error);
+    appState.errors.push({
+      module: 'animations',
+      error: error.message,
+      timestamp: Date.now(),
+    });
   }
 }
 
 /**
  * Initialize forms module
- * @returns {Promise<boolean>} Success status
+ * @returns {Promise<void>}
  */
-async function initializeForms() {
+async function initForms() {
   try {
-    performance.start('forms-init');
-    
-    // Forms module auto-initializes, just verify it's loaded
-    if (typeof window.FormValidator !== 'undefined') {
-      logger.info('Forms module loaded');
-    } else {
-      logger.warn('Forms module not found, form validation disabled');
+    if (!MODULE_CONFIG.forms.enabled) {
+      console.info('[Main] Forms disabled');
+      return;
     }
-    
-    appState.modules.forms = true;
-    performance.end('forms-init');
-    return true;
+
+    console.info('[Main] Forms initialized');
+    appState.modules.set('forms', true);
   } catch (error) {
-    logger.error('Forms initialization failed', error);
-    appState.modules.forms = false;
-    return false;
+    console.error('[Main] Failed to initialize forms:', error);
+    appState.errors.push({
+      module: 'forms',
+      error: error.message,
+      timestamp: Date.now(),
+    });
   }
 }
 
 /**
- * Initialize all modules with error recovery
+ * Initialize performance monitoring
  * @returns {Promise<void>}
  */
-async function initializeModules() {
-  performance.start('total-init');
-  
-  const initPromises = [
-    initializeNavigation(),
-    initializeAnimations(),
-    initializeForms(),
-  ];
-
+async function initPerformanceMonitoring() {
   try {
-    const results = await Promise.allSettled(initPromises);
-    
-    // Log results
-    results.forEach((result, index) => {
-      const moduleName = ['navigation', 'animations', 'forms'][index];
-      if (result.status === 'rejected') {
-        logger.error(`Module ${moduleName} failed to initialize`, result.reason);
+    if (!PERFORMANCE_CONFIG.enabled) {
+      console.info('[Main] Performance monitoring disabled');
+      return;
+    }
+
+    if (!('PerformanceObserver' in window)) {
+      console.warn('[Main] PerformanceObserver not supported');
+      return;
+    }
+
+    // Monitor Largest Contentful Paint (LCP)
+    const lcpObserver = new PerformanceObserver((list) => {
+      const entries = list.getEntries();
+      const lastEntry = entries[entries.length - 1];
+      const lcp = lastEntry.renderTime || lastEntry.loadTime;
+
+      console.info(`[Performance] LCP: ${lcp.toFixed(2)}ms`);
+
+      if (lcp > PERFORMANCE_CONFIG.metrics.lcp.target) {
+        console.warn(`[Performance] LCP exceeds target: ${lcp.toFixed(2)}ms > ${PERFORMANCE_CONFIG.metrics.lcp.target}ms`);
       }
     });
 
-    // Check if at least one module initialized successfully
-    const successCount = results.filter(r => r.status === 'fulfilled' && r.value).length;
-    
-    if (successCount === 0) {
-      throw new Error('All modules failed to initialize');
-    }
+    lcpObserver.observe({ entryTypes: ['largest-contentful-paint'] });
 
-    logger.info('Modules initialized', {
-      success: successCount,
-      total: results.length,
-    });
-  } catch (error) {
-    logger.error('Critical initialization failure', error);
-    throw error;
-  } finally {
-    performance.end('total-init');
-  }
-}
+    // Monitor First Input Delay (FID)
+    const fidObserver = new PerformanceObserver((list) => {
+      const entries = list.getEntries();
+      entries.forEach((entry) => {
+        const fid = entry.processingStart - entry.startTime;
+        console.info(`[Performance] FID: ${fid.toFixed(2)}ms`);
 
-/**
- * Setup global error handlers
- */
-function setupErrorHandlers() {
-  // Handle unhandled promise rejections
-  window.addEventListener('unhandledrejection', (event) => {
-    logger.error('Unhandled promise rejection', event.reason, {
-      promise: event.promise,
-    });
-    event.preventDefault();
-  });
-
-  // Handle global errors
-  window.addEventListener('error', (event) => {
-    logger.error('Global error', event.error || new Error(event.message), {
-      filename: event.filename,
-      lineno: event.lineno,
-      colno: event.colno,
-    });
-  });
-}
-
-/**
- * Setup performance monitoring
- */
-function setupPerformanceMonitoring() {
-  // Monitor page load performance
-  if ('performance' in window && 'getEntriesByType' in window.performance) {
-    window.addEventListener('load', () => {
-      setTimeout(() => {
-        const perfData = window.performance.getEntriesByType('navigation')[0];
-        if (perfData) {
-          logger.info('Page load performance', {
-            domContentLoaded: `${Math.round(perfData.domContentLoadedEventEnd - perfData.domContentLoadedEventStart)}ms`,
-            loadComplete: `${Math.round(perfData.loadEventEnd - perfData.loadEventStart)}ms`,
-            domInteractive: `${Math.round(perfData.domInteractive - perfData.fetchStart)}ms`,
-          });
+        if (fid > PERFORMANCE_CONFIG.metrics.fid.target) {
+          console.warn(`[Performance] FID exceeds target: ${fid.toFixed(2)}ms > ${PERFORMANCE_CONFIG.metrics.fid.target}ms`);
         }
-      }, 0);
+      });
+    });
+
+    fidObserver.observe({ entryTypes: ['first-input'] });
+
+    // Monitor Cumulative Layout Shift (CLS)
+    let clsScore = 0;
+    const clsObserver = new PerformanceObserver((list) => {
+      const entries = list.getEntries();
+      entries.forEach((entry) => {
+        if (!entry.hadRecentInput) {
+          clsScore += entry.value;
+        }
+      });
+
+      console.info(`[Performance] CLS: ${clsScore.toFixed(4)}`);
+
+      if (clsScore > PERFORMANCE_CONFIG.metrics.cls.target) {
+        console.warn(`[Performance] CLS exceeds target: ${clsScore.toFixed(4)} > ${PERFORMANCE_CONFIG.metrics.cls.target}`);
+      }
+    });
+
+    clsObserver.observe({ entryTypes: ['layout-shift'] });
+
+    console.info('[Main] Performance monitoring initialized');
+    appState.modules.set('performance', true);
+  } catch (error) {
+    console.error('[Main] Failed to initialize performance monitoring:', error);
+    appState.errors.push({
+      module: 'performance',
+      error: error.message,
+      timestamp: Date.now(),
     });
   }
 }
 
 /**
- * Setup accessibility features
- */
-function setupAccessibility() {
-  // Add skip to main content link if not present
-  const skipLink = document.querySelector('a[href="#main"]');
-  if (!skipLink) {
-    const link = document.createElement('a');
-    link.href = '#main';
-    link.className = 'skip-link';
-    link.textContent = 'Skip to main content';
-    link.style.cssText = `
-      position: absolute;
-      top: -40px;
-      left: 0;
-      background: #000;
-      color: #fff;
-      padding: 8px;
-      text-decoration: none;
-      z-index: 100;
-    `;
-    link.addEventListener('focus', () => {
-      link.style.top = '0';
-    });
-    link.addEventListener('blur', () => {
-      link.style.top = '-40px';
-    });
-    document.body.insertBefore(link, document.body.firstChild);
-  }
-
-  // Ensure main content has proper landmark
-  const main = document.querySelector('main');
-  if (main && !main.id) {
-    main.id = 'main';
-  }
-}
-
-/**
- * Initialize application with retry logic
- * @param {number} retryCount - Current retry attempt
+ * Initialize all modules in priority order
  * @returns {Promise<void>}
  */
-async function initializeApp(retryCount = 0) {
+async function initializeModules() {
+  const modules = [
+    { name: 'lazyLoading', init: initLazyLoading, priority: MODULE_CONFIG.lazyLoading.priority },
+    { name: 'navigation', init: initNavigation, priority: MODULE_CONFIG.navigation.priority },
+    { name: 'animations', init: initAnimations, priority: MODULE_CONFIG.animations.priority },
+    { name: 'forms', init: initForms, priority: MODULE_CONFIG.forms.priority },
+    { name: 'performance', init: initPerformanceMonitoring, priority: 5 },
+  ];
+
+  // Sort by priority
+  modules.sort((a, b) => a.priority - b.priority);
+
+  // Initialize modules sequentially
+  for (const module of modules) {
+    try {
+      await module.init();
+    } catch (error) {
+      console.error(`[Main] Failed to initialize ${module.name}:`, error);
+    }
+  }
+}
+
+/**
+ * Main application initialization
+ */
+async function init() {
   if (appState.initialized) {
-    logger.warn('Application already initialized');
+    console.warn('[Main] Application already initialized');
     return;
   }
 
   try {
-    logger.info('Initializing application', { attempt: retryCount + 1 });
+    console.info('[Main] Initializing application...');
 
-    // Setup error handlers first
-    setupErrorHandlers();
-
-    // Setup performance monitoring
-    setupPerformanceMonitoring();
-
-    // Setup accessibility features
-    setupAccessibility();
-
-    // Initialize modules with timeout
-    const initPromise = initializeModules();
-    const timeoutPromise = new Promise((_, reject) => {
-      setTimeout(() => reject(new Error('Initialization timeout')), CONFIG.INIT_TIMEOUT);
-    });
-
-    await Promise.race([initPromise, timeoutPromise]);
+    // Initialize all modules
+    await initializeModules();
 
     appState.initialized = true;
-    logger.info('Application initialized successfully');
 
-    // Dispatch custom event for other scripts
-    window.dispatchEvent(new CustomEvent('app:initialized', {
-      detail: { modules: appState.modules },
-    }));
-  } catch (error) {
-    logger.error('Application initialization failed', error, {
-      attempt: retryCount + 1,
-    });
+    // Log initialization summary
+    console.info('[Main] Application initialized successfully');
+    console.info(`[Main] Modules loaded: ${appState.modules.size}`);
 
-    // Retry logic
-    if (retryCount < CONFIG.MAX_RETRIES) {
-      logger.info('Retrying initialization', {
-        delay: CONFIG.RETRY_DELAY,
-        attempt: retryCount + 2,
+    if (appState.errors.length > 0) {
+      console.warn(`[Main] Initialization completed with ${appState.errors.length} errors`);
+      appState.errors.forEach((err) => {
+        console.warn(`[Main] - ${err.module}: ${err.error}`);
       });
-      
-      await new Promise(resolve => setTimeout(resolve, CONFIG.RETRY_DELAY));
-      return initializeApp(retryCount + 1);
     }
 
-    // Max retries reached
-    logger.error('Maximum initialization retries reached', error);
-    
-    // Dispatch failure event
-    window.dispatchEvent(new CustomEvent('app:init-failed', {
-      detail: { error: error.message, attempts: retryCount + 1 },
+    // Dispatch custom event for application ready
+    window.dispatchEvent(new CustomEvent('app:ready', {
+      detail: {
+        modules: Array.from(appState.modules.keys()),
+        errors: appState.errors,
+      },
     }));
+  } catch (error) {
+    console.error('[Main] Critical initialization error:', error);
+    appState.errors.push({
+      module: 'main',
+      error: error.message,
+      timestamp: Date.now(),
+    });
   }
-}
-
-/**
- * Cleanup function for page unload
- */
-function cleanup() {
-  logger.info('Cleaning up application');
-  
-  // Clear any timers or intervals
-  performance.marks.clear();
-  
-  // Dispatch cleanup event
-  window.dispatchEvent(new CustomEvent('app:cleanup'));
 }
 
 /**
  * Initialize on DOM ready
  */
 if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', () => {
-    initializeApp().catch(error => {
-      logger.error('Fatal initialization error', error);
-    });
-  });
+  document.addEventListener('DOMContentLoaded', init);
 } else {
-  // DOM already loaded
-  initializeApp().catch(error => {
-    logger.error('Fatal initialization error', error);
-  });
+  init();
 }
 
 /**
- * Cleanup on page unload
- */
-window.addEventListener('unload', cleanup);
-
-/**
- * Export for module usage and testing
+ * Export for module usage
  */
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = {
-    initializeApp,
+    init,
     appState,
-    logger,
   };
 }
