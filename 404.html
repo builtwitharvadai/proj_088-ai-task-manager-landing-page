@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>Page Not Found | AI Task Manager</title>
+    <meta
+      name="description"
+      content="The page you're looking for doesn't exist. Return to AI Task Manager to boost your productivity with AI-powered task management."
+    />
+    <meta name="robots" content="noindex, nofollow" />
+
+    <meta property="og:title" content="Page Not Found | AI Task Manager" />
+    <meta
+      property="og:description"
+      content="The page you're looking for doesn't exist. Return to AI Task Manager."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="AI Task Manager" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Page Not Found | AI Task Manager" />
+    <meta
+      name="twitter:description"
+      content="The page you're looking for doesn't exist. Return to AI Task Manager."
+    />
+
+    <meta
+      name="theme-color"
+      content="#007bff"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="theme-color"
+      content="#1a1a2e"
+      media="(prefers-color-scheme: dark)"
+    />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+
+    <link rel="stylesheet" href="/src/styles/main.css" />
+
+    <style>
+      .error-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        padding: 2rem;
+        text-align: center;
+      }
+
+      .error-code {
+        font-size: clamp(4rem, 15vw, 10rem);
+        font-weight: 700;
+        line-height: 1;
+        margin: 0;
+        color: var(--color-primary, #007bff);
+        opacity: 0.1;
+      }
+
+      .error-title {
+        font-size: clamp(1.5rem, 4vw, 2.5rem);
+        font-weight: 600;
+        margin: 1rem 0;
+        color: var(--color-text, #1a1a2e);
+      }
+
+      .error-message {
+        font-size: clamp(1rem, 2vw, 1.25rem);
+        color: var(--color-text-secondary, #666);
+        max-width: 600px;
+        margin: 1rem auto 2rem;
+        line-height: 1.6;
+      }
+
+      .error-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+        margin-top: 2rem;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+        font-weight: 500;
+        text-decoration: none;
+        border-radius: 0.5rem;
+        transition: all 0.2s ease;
+        border: 2px solid transparent;
+      }
+
+      .btn-primary {
+        background-color: var(--color-primary, #007bff);
+        color: white;
+      }
+
+      .btn-primary:hover,
+      .btn-primary:focus {
+        background-color: var(--color-primary-dark, #0056b3);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+      }
+
+      .btn-secondary {
+        background-color: transparent;
+        color: var(--color-primary, #007bff);
+        border-color: var(--color-primary, #007bff);
+      }
+
+      .btn-secondary:hover,
+      .btn-secondary:focus {
+        background-color: var(--color-primary, #007bff);
+        color: white;
+        transform: translateY(-2px);
+      }
+
+      .btn:focus {
+        outline: 2px solid var(--color-primary, #007bff);
+        outline-offset: 2px;
+      }
+
+      .error-icon {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 2rem;
+        opacity: 0.8;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .btn:hover,
+        .btn:focus {
+          transform: none;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .error-actions {
+          flex-direction: column;
+          width: 100%;
+          max-width: 300px;
+        }
+
+        .btn {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main role="main" class="error-container">
+      <svg
+        class="error-icon"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+      >
+        <circle
+          cx="12"
+          cy="12"
+          r="10"
+          stroke="currentColor"
+          stroke-width="2"
+          opacity="0.3"
+        />
+        <path
+          d="M12 8V12M12 16H12.01"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+
+      <h1 class="error-code" aria-hidden="true">404</h1>
+
+      <h2 class="error-title">Page Not Found</h2>
+
+      <p class="error-message">
+        Oops! The page you're looking for doesn't exist. It might have been
+        moved, deleted, or the URL might be incorrect. Let's get you back on
+        track with AI-powered productivity.
+      </p>
+
+      <div class="error-actions">
+        <a
+          href="/"
+          class="btn btn-primary"
+          aria-label="Return to AI Task Manager home page"
+        >
+          Go to Home
+        </a>
+        <button
+          type="button"
+          class="btn btn-secondary"
+          onclick="window.history.back()"
+          aria-label="Go back to previous page"
+        >
+          Go Back
+        </button>
+      </div>
+    </main>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const referrer = document.referrer;
+        if (!referrer || referrer.indexOf(window.location.host) === -1) {
+          const backButton = document.querySelector(
+            'button[onclick="window.history.back()"]'
+          );
+          if (backButton) {
+            backButton.style.display = 'none';
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
