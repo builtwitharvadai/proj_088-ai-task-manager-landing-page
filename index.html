@@ -1,166 +1,328 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <!-- Character encoding MUST be first -->
     <meta charset="UTF-8" />
-
-    <!-- Viewport for responsive design -->
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, viewport-fit=cover"
     />
-
-    <!-- Document title with site name -->
-    <title>AI Task Manager - Intelligent Task Management for Modern Teams</title>
-
-    <!-- Meta descriptions for SEO -->
+    <title>
+      Transform Your Productivity with AI-Powered Task Management | AI Task
+      Manager
+    </title>
     <meta
       name="description"
-      content="Transform your workflow with AI-powered task management. Automate prioritization, get intelligent insights, and boost team productivity with our cutting-edge task management platform."
+      content="Revolutionize your workflow with AI-powered task management. Intelligent prioritization, automated scheduling, and smart insights to boost your productivity."
     />
-    <meta
-      name="keywords"
-      content="AI task manager, task management, productivity, workflow automation, team collaboration, intelligent task prioritization, deadline prediction, project management, AI-powered productivity"
-    />
-    <meta name="author" content="AI Task Manager Team" />
-    <meta name="robots" content="index, follow" />
-
-    <!-- Canonical URL to prevent duplicate content -->
-    <link rel="canonical" href="https://aitaskmanager.com/" />
-
-    <!-- Open Graph for social media -->
-    <meta
-      property="og:title"
-      content="AI Task Manager - Intelligent Task Management for Modern Teams"
-    />
+    <meta name="keywords" content="AI task management, productivity, automation, task prioritization, workflow optimization" />
+    
+    <meta property="og:title" content="Transform Your Productivity with AI-Powered Task Management" />
     <meta
       property="og:description"
-      content="Transform your workflow with AI-powered task management. Automate prioritization, get intelligent insights, and boost team productivity with our cutting-edge task management platform."
+      content="Revolutionize your workflow with AI-powered task management. Intelligent prioritization, automated scheduling, and smart insights to boost your productivity."
     />
-    <meta
-      property="og:image"
-      content="https://aitaskmanager.com/images/og-image.jpg"
-    />
-    <meta property="og:url" content="https://aitaskmanager.com/" />
+    <meta property="og:image" content="https://ai-task-manager.com/og-image.jpg" />
+    <meta property="og:url" content="https://ai-task-manager.com/" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="AI Task Manager" />
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="AI Task Manager Platform Screenshot" />
-
-    <!-- Twitter Card -->
+    
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@aitaskmanager" />
-    <meta name="twitter:creator" content="@aitaskmanager" />
-    <meta
-      name="twitter:title"
-      content="AI Task Manager - Intelligent Task Management for Modern Teams"
-    />
+    <meta name="twitter:title" content="Transform Your Productivity with AI-Powered Task Management" />
     <meta
       name="twitter:description"
-      content="Transform your workflow with AI-powered task management. Automate prioritization, get intelligent insights, and boost team productivity with our cutting-edge task management platform."
+      content="Revolutionize your workflow with AI-powered task management. Intelligent prioritization, automated scheduling, and smart insights."
     />
-    <meta
-      name="twitter:image"
-      content="https://aitaskmanager.com/images/og-image.jpg"
-    />
-
-    <!-- JSON-LD Structured Data - Organization -->
+    <meta name="twitter:image" content="https://ai-task-manager.com/twitter-image.jpg" />
+    
+    <link rel="canonical" href="https://ai-task-manager.com/" />
+    
+    <meta name="theme-color" content="#007bff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#1a1a2e" media="(prefers-color-scheme: dark)" />
+    
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <link rel="stylesheet" href="/src/styles/main.css" />
+    
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Organization",
+        "@type": "WebApplication",
         "name": "AI Task Manager",
-        "url": "https://aitaskmanager.com",
-        "logo": "https://aitaskmanager.com/images/logo.png",
-        "description": "Transform your workflow with AI-powered task management. Automate prioritization, get intelligent insights, and boost team productivity with our cutting-edge task management platform.",
-        "sameAs": [
-          "https://twitter.com/aitaskmanager",
-          "https://linkedin.com/company/aitaskmanager",
-          "https://github.com/aitaskmanager"
-        ],
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "contactType": "Customer Service",
-          "email": "support@aitaskmanager.com",
-          "availableLanguage": ["English"]
-        }
-      }
-    </script>
-
-    <!-- JSON-LD Structured Data - Software Application -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "AI Task Manager",
-        "applicationCategory": "BusinessApplication",
+        "description": "AI-powered task management platform for enhanced productivity",
+        "url": "https://ai-task-manager.com",
+        "applicationCategory": "ProductivityApplication",
         "operatingSystem": "Web",
         "offers": {
-          "@type": "Offer",
-          "price": "0",
+          "@type": "AggregateOffer",
           "priceCurrency": "USD",
-          "description": "Free tier available with premium plans"
-        },
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "4.8",
-          "ratingCount": "1250",
-          "bestRating": "5",
-          "worstRating": "1"
-        },
-        "description": "Transform your workflow with AI-powered task management. Automate prioritization, get intelligent insights, and boost team productivity with our cutting-edge task management platform.",
-        "screenshot": "https://aitaskmanager.com/images/app-screenshot.jpg",
-        "featureList": [
-          "AI-powered task prioritization",
-          "Intelligent deadline prediction",
-          "Automated workflow optimization",
-          "Real-time collaboration",
-          "Advanced analytics and insights"
-        ]
-      }
-    </script>
-
-    <!-- JSON-LD Structured Data - Website -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "AI Task Manager",
-        "url": "https://aitaskmanager.com",
-        "description": "Transform your workflow with AI-powered task management. Automate prioritization, get intelligent insights, and boost team productivity with our cutting-edge task management platform.",
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": {
-            "@type": "EntryPoint",
-            "urlTemplate": "https://aitaskmanager.com/search?q={search_term_string}"
-          },
-          "query-input": "required name=search_term_string"
+          "lowPrice": "0",
+          "highPrice": "49"
         }
       }
     </script>
-
-    <!-- JSON-LD Structured Data - Breadcrumb -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://aitaskmanager.com"
-          }
-        ]
-      }
-    </script>
-
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   </head>
   <body>
-    <div id="app"></div>
+    <a href="#main" class="skip-link">Skip to main content</a>
+    
+    <header role="banner" id="header"></header>
+    
+    <main id="main" role="main">
+      <section id="hero" aria-labelledby="hero-heading">
+        <div class="hero-content">
+          <h1 id="hero-heading">
+            Transform Your Productivity with AI-Powered Task Management
+          </h1>
+          <p class="hero-subtitle">
+            Harness the power of artificial intelligence to prioritize tasks,
+            automate workflows, and achieve more in less time.
+          </p>
+          <div class="hero-cta">
+            <a href="#pricing" class="btn btn-primary" aria-label="Get started with AI Task Manager">
+              Get Started Free
+            </a>
+            <a href="#features" class="btn btn-secondary" aria-label="Learn more about features">
+              Learn More
+            </a>
+          </div>
+        </div>
+      </section>
+      
+      <section id="features" aria-labelledby="features-heading">
+        <div class="container">
+          <h2 id="features-heading">Powerful AI Capabilities</h2>
+          <p class="section-subtitle">
+            Experience the future of task management with intelligent automation
+          </p>
+          <div class="features-grid">
+            <article class="feature-card">
+              <div class="feature-icon" aria-hidden="true">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9 11L12 14L22 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M21 12V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <h3>Intelligent Prioritization</h3>
+              <p>
+                AI analyzes your tasks, deadlines, and work patterns to
+                automatically prioritize what matters most, ensuring you focus
+                on high-impact activities.
+              </p>
+            </article>
+            
+            <article class="feature-card">
+              <div class="feature-icon" aria-hidden="true">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 8V12L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/>
+                </svg>
+              </div>
+              <h3>Automated Scheduling</h3>
+              <p>
+                Let AI optimize your calendar by automatically scheduling tasks
+                based on your availability, energy levels, and project
+                dependencies.
+              </p>
+            </article>
+            
+            <article class="feature-card">
+              <div class="feature-icon" aria-hidden="true">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <h3>Smart Insights</h3>
+              <p>
+                Gain actionable insights from AI-powered analytics that identify
+                productivity patterns, bottlenecks, and opportunities for
+                improvement.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+      
+      <section id="workflow" aria-labelledby="workflow-heading">
+        <div class="container">
+          <h2 id="workflow-heading">How It Works</h2>
+          <p class="section-subtitle">
+            Get started in minutes with our intuitive AI-powered workflow
+          </p>
+          <div class="workflow-steps">
+            <article class="workflow-step">
+              <div class="step-number" aria-hidden="true">1</div>
+              <h3>Add Your Tasks</h3>
+              <p>
+                Simply input your tasks, projects, and goals. Our AI
+                understands natural language and context.
+              </p>
+            </article>
+            
+            <article class="workflow-step">
+              <div class="step-number" aria-hidden="true">2</div>
+              <h3>AI Analyzes & Organizes</h3>
+              <p>
+                Our intelligent system categorizes, prioritizes, and schedules
+                your tasks based on multiple factors.
+              </p>
+            </article>
+            
+            <article class="workflow-step">
+              <div class="step-number" aria-hidden="true">3</div>
+              <h3>Execute & Optimize</h3>
+              <p>
+                Follow your AI-optimized schedule and watch your productivity
+                soar. The system learns and improves over time.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+      
+      <section id="testimonials" aria-labelledby="testimonials-heading">
+        <div class="container">
+          <h2 id="testimonials-heading">What Our Users Say</h2>
+          <p class="section-subtitle">
+            Join thousands of professionals who have transformed their
+            productivity
+          </p>
+          <div class="testimonials-grid">
+            <article class="testimonial-card">
+              <blockquote>
+                <p>
+                  "AI Task Manager has completely transformed how I work. The
+                  intelligent prioritization saves me hours every week."
+                </p>
+              </blockquote>
+              <footer>
+                <cite>
+                  <strong>Sarah Johnson</strong>
+                  <span>Product Manager, Tech Corp</span>
+                </cite>
+              </footer>
+            </article>
+            
+            <article class="testimonial-card">
+              <blockquote>
+                <p>
+                  "The automated scheduling feature is a game-changer. I never
+                  miss deadlines and my team's productivity has increased by
+                  40%."
+                </p>
+              </blockquote>
+              <footer>
+                <cite>
+                  <strong>Michael Chen</strong>
+                  <span>Engineering Lead, StartupXYZ</span>
+                </cite>
+              </footer>
+            </article>
+            
+            <article class="testimonial-card">
+              <blockquote>
+                <p>
+                  "The insights provided by the AI have helped me identify and
+                  eliminate bottlenecks I didn't even know existed."
+                </p>
+              </blockquote>
+              <footer>
+                <cite>
+                  <strong>Emily Rodriguez</strong>
+                  <span>Freelance Designer</span>
+                </cite>
+              </footer>
+            </article>
+          </div>
+        </div>
+      </section>
+      
+      <section id="pricing" aria-labelledby="pricing-heading">
+        <div class="container">
+          <h2 id="pricing-heading">Choose Your Plan</h2>
+          <p class="section-subtitle">
+            Flexible pricing for individuals and teams of all sizes
+          </p>
+          <div class="pricing-grid">
+            <article class="pricing-card">
+              <header class="pricing-header">
+                <h3>Free</h3>
+                <div class="price">
+                  <span class="currency">$</span>
+                  <span class="amount">0</span>
+                  <span class="period">/month</span>
+                </div>
+              </header>
+              <ul class="pricing-features" role="list">
+                <li>Up to 50 tasks</li>
+                <li>Basic AI prioritization</li>
+                <li>Mobile app access</li>
+                <li>Email support</li>
+              </ul>
+              <footer class="pricing-footer">
+                <a href="#signup" class="btn btn-outline" aria-label="Get started with Free plan">
+                  Get Started
+                </a>
+              </footer>
+            </article>
+            
+            <article class="pricing-card pricing-card-featured" aria-label="Most popular plan">
+              <div class="pricing-badge" aria-label="Most popular">Most Popular</div>
+              <header class="pricing-header">
+                <h3>Pro</h3>
+                <div class="price">
+                  <span class="currency">$</span>
+                  <span class="amount">19</span>
+                  <span class="period">/month</span>
+                </div>
+              </header>
+              <ul class="pricing-features" role="list">
+                <li>Unlimited tasks</li>
+                <li>Advanced AI features</li>
+                <li>Automated scheduling</li>
+                <li>Smart insights & analytics</li>
+                <li>Priority support</li>
+                <li>Team collaboration</li>
+              </ul>
+              <footer class="pricing-footer">
+                <a href="#signup" class="btn btn-primary" aria-label="Get started with Pro plan">
+                  Start Free Trial
+                </a>
+              </footer>
+            </article>
+            
+            <article class="pricing-card">
+              <header class="pricing-header">
+                <h3>Enterprise</h3>
+                <div class="price">
+                  <span class="currency">$</span>
+                  <span class="amount">49</span>
+                  <span class="period">/month</span>
+                </div>
+              </header>
+              <ul class="pricing-features" role="list">
+                <li>Everything in Pro</li>
+                <li>Custom AI training</li>
+                <li>Advanced security</li>
+                <li>Dedicated account manager</li>
+                <li>SLA guarantee</li>
+                <li>Custom integrations</li>
+              </ul>
+              <footer class="pricing-footer">
+                <a href="#contact" class="btn btn-outline" aria-label="Contact sales for Enterprise plan">
+                  Contact Sales
+                </a>
+              </footer>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+    
+    <footer role="contentinfo" id="footer"></footer>
+    
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
